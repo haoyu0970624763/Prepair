@@ -33,7 +33,8 @@
             type="primary"
             :disabled="isDisabled"
             :loading="isLoading"
-            @click.stop="login">
+            @click.stop="login"
+          >
             立刻登錄
           </Button>
           <div class="option">
@@ -73,7 +74,8 @@
             class="loginBtn"
             type="primary"
             :disabled="isRegAble"
-            @click.stop="register">
+            @click.stop="register"
+          >
             立刻註冊
           </Button>
         </div>
@@ -83,6 +85,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Login',
   data () {
@@ -97,7 +100,8 @@ export default {
         userPassword2: ''
       },
       // 显示不同的view
-      typeView: 0
+      typeView: 0,
+      userToken: ''
     }
   },
   computed: {
@@ -123,34 +127,21 @@ export default {
       this.typeView = type
       this.clearInput()
     },
-    // 返回登录界面
-    selectLogin () {
-      this.typeView = 0
-      this.clearInput()
-    },
-    // 忘记密码界面
-    forgetPwd () {
-      this.$Message.info('忘记密码，请联系客服')
-    },
     // 立即登录
     login () {
       if (this.isDisabled) {
         return false
       }
-      let form = {
-        username: this.formLogin.userName,
-        password: this.formLogin.userPwd
-      }
+      this.$store.commit('setUserInfo', this.formLogin.userName, this.formLogin.password)
+      this.$router.push({ path: '/homepage' })
     },
     // 立即注册
     register () {
       if (this.isRegAble) {
         return false
       }
-      let data = {
-        username: this.formRegister.userName,
-        password: this.formRegister.userPassword
-      }
+      this.$store.commit('setUserInfo', this.formRegister.userName, this.formRegister.password)
+      this.$router.push({ path: '/homepage' })
     },
     // 清空输入框
     clearInput () {
@@ -170,28 +161,27 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
 .login-container {
-  background-image: url('../assets/background.jpg');
+  background-image: url("../assets/background.jpg");
   background-position: center;
   background-size: cover;
   position: relative;
   max-width: 100%;
-  max-height: 100% ;
+  max-height: 100%;
   width: 100%;
   height: 100%;
-  
   .login-box {
     position: absolute;
-    @media screen and (min-width:300px) and (max-width:600px){
-        width: 260px;
-        left: 15vw;
+    @media screen and (min-width: 300px) and (max-width: 600px) {
+      width: 260px;
+      left: 15vw;
     }
-    @media screen and (min-width:600px) and (max-width:1000px){
-        width: 420px;
-        left: 25vw;
+    @media screen and (min-width: 600px) and (max-width: 1000px) {
+      width: 420px;
+      left: 25vw;
     }
-    @media screen and (min-width:1000px) {
-        width: 500px;
-        left: 35vw;
+    @media screen and (min-width: 1000px) {
+      width: 500px;
+      left: 35vw;
     }
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -203,14 +193,15 @@ export default {
     background: #fff;
     padding: 45px 35px;
 
-    .input-box{
-       margin-top: 30px;
+    .input-box {
+      margin-top: 30px;
     }
 
     .option {
       text-align: left;
       margin-top: 18px;
-      .forget-pwd, .goback {
+      .forget-pwd,
+      .goback {
         margin-top: 30px;
         float: right;
         font-size: 14px;
@@ -280,6 +271,5 @@ export default {
       font-size: 15px;
     }
   }
-
 }
 </style>
