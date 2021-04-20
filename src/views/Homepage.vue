@@ -21,13 +21,13 @@
       <div class="collapse navbar-collapse" id="foldNavigation">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">去看房</a>
+            <a class="nav-link" href="javascript:;">去看房</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">找室友</a>
+            <a class="nav-link" href="javascript:;">找室友</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">合約go</a>
+            <a class="nav-link" href="javascript:;">合約go</a>
           </li>
           <li class="nav-item">
             <div class="dropleft">
@@ -42,8 +42,8 @@
                 {{ userInfo.name }}
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">填寫使用者資料與習慣</a>
-                <a class="dropdown-item" href="#" @click="logout">登出</a>
+                <a class="dropdown-item" href="" @click="writeHabit">填寫使用者資料與習慣</a>
+                <a class="dropdown-item" href="" @click="logout">登出</a>
               </div>
             </div>
           </li>
@@ -136,7 +136,7 @@
 
 <script>
 export default {
-  name: "homepage",
+  name: "Homepage",
   data() {
     return {
       userInfo: {
@@ -289,6 +289,9 @@ export default {
        this.$store.commit('setUserInfo', '', '')
        this.$router.push({ path: '/login' })
     },
+    writeHabit (){
+       this.$router.push({ path: '/LivingHabit' })
+    },
     SearchVIP() {
       const { $router } = this;
       console.log("ok");
@@ -340,6 +343,9 @@ export default {
     flex-direction: row;
     align-content: space-between;
     align-items: center;
+  }
+  .badge{
+    margin-right: 2vw;
   }
 }
 

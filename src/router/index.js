@@ -18,8 +18,11 @@ export default new Router({
     },
     {
       path: '/Homepage',
-      name: 'homepage',
       component: () => import('@/views/Homepage.vue')
+    },
+    {
+      path: '/LivingHabit',
+      component: () => import('@/views/LivingHabit.vue')
     }
   ]
 })
