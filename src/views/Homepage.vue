@@ -39,7 +39,7 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                {{ userInfo.name }}
+                {{ this.$store.state.userName }}
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="" @click="writeHabit">填寫使用者資料與習慣</a>
@@ -139,11 +139,6 @@ export default {
   name: "Homepage",
   data() {
     return {
-      userInfo: {
-        name: this.$store.state.userName,
-        password: this.$store.state.userPassword,
-      },
-      username: "",
       region: "南部",
       city: "台南市",
       township: "東區",
@@ -287,23 +282,12 @@ export default {
     },
     logout (){
        this.$store.commit('setUserInfo', '', '')
-       this.$router.push({ path: '/login' })
+       this.$router.push( '/login')
     },
     writeHabit (){
-       this.$router.push({ path: '/LivingHabit' })
+       this.$router.push('/LivingHabit')
     },
-    SearchVIP() {
-      const { $router } = this;
-      console.log("ok");
-      this.$http.post("selectUser", data).then((res) => {
-        console.log("ok");
-        if (res.data == -1) {
-          this.showup = "kkk ";
-        } else {
-          this.showup = res.data;
-        }
-      });
-    },
+   
   },
 };
 </script>

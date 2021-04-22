@@ -133,7 +133,7 @@ export default {
         return false
       }
       this.$store.commit('setUserInfo', this.formLogin.userName, this.formLogin.password)
-      this.$router.push({ path: '/homepage' })
+      this.$router.push('/homepage' )
     },
     // 立即注册
     register () {

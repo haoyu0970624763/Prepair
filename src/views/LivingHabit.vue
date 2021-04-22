@@ -3,56 +3,55 @@
   <div class="LivingHabit">
     <!-- bg-dark为更改navbar背景颜色 -->
     <!-- navbar-dark为控制文本颜色 dark设置为深色背景颜色变体-->
-
-    <nav id="navigation" class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand">Prepair-最適合的共租平台</a>
-
-      <!--使用navbar-toggler控制折叠组件,并将navbar-toggler的 data-target属性设置为collapse的id-->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#foldNavigation"
-        aria-controls="foldNavigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="foldNavigation">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:;">去看房</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:;">找室友</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:;">合約go</a>
-          </li>
-          <li class="nav-item">
-            <div class="dropleft">
-              <button
-                class="btn btn-info dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                {{ userInfo.name }}
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#" @click="writeHabit"
-                  >填寫使用者資料與習慣</a
-                >
-                <a class="dropdown-item" href="#" @click="logout">登出</a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
     <div id="Container">
+      <nav id="navigation" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand">Prepair-最適合的共租平台</a>
+
+        <!--使用navbar-toggler控制折叠组件,并将navbar-toggler的 data-target属性设置为collapse的id-->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#foldNavigation"
+          aria-controls="foldNavigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="foldNavigation">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;">去看房</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;">找室友</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;">合約go</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropleft">
+                <button
+                  class="btn btn-info dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  {{ userInfo.name }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#" @click="writeHabit"
+                    >填寫使用者資料與習慣</a
+                  >
+                  <a class="dropdown-item" href="#" @click="logout">登出</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <div class="questionBox">
         <div class="title">使用者資料與習慣收集</div>
         <div class="classification-title">個人行為與嗜好</div>
@@ -222,6 +221,7 @@
           </select>
           <p>3.會不會介意不預期的嘈雜聲(例如:鍵盤敲打聲、唱歌)?</p>
         </div>
+        <button id="sendButton" type="button" class="btn btn-outline-secondary">送出資料</button>
       </div>
     </div>
   </div>
@@ -278,7 +278,7 @@ export default {
   }
   #Container {
     width: 100vw;
-    height: 160vh;
+    height: 167.5vh;
     position: absolute;
     background-color: #f0f0f0;
     .questionBox {
@@ -318,6 +318,10 @@ export default {
         align-items: center;
         padding-right: 1vw;
       }
+    }
+    #sendButton{
+      margin-top: 20px;
+      margin-left: 37.5vw;
     }
   }
 }
