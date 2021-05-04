@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import Login from '@/views/Login.vue'
+import Homepage from '@/views/Homepage.vue'
+import LivingHabit from '@/views/LivingHabit.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -9,20 +11,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect : '/login',
-      
-    },
-    {
-      path: '/login',
-      component: () => import('@/views/Login.vue')
+      name:Login,
+      component:Login
     },
     {
       path: '/Homepage',
-      component: () => import('@/views/Homepage.vue')
+      component: Homepage
     },
     {
       path: '/LivingHabit',
-      component: () => import('@/views/LivingHabit.vue')
+      component: LivingHabit
     }
   ]
 })

@@ -133,7 +133,7 @@ export default {
         return false
       }
       this.$store.commit('setUserInfo', this.formLogin.userName, this.formLogin.password)
-      this.$router.push('/homepage' )
+      this.$router.push('/Homepage' )
     },
     // 立即注册
     register () {
@@ -141,7 +141,7 @@ export default {
         return false
       }
       this.$store.commit('setUserInfo', this.formRegister.userName, this.formRegister.password)
-      this.$router.push({ path: '/homepage' })
+      this.router.push('/Homepage')
     },
     // 清空输入框
     clearInput () {

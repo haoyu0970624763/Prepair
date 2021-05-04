@@ -42,7 +42,9 @@
                 {{ this.$store.state.userName }}
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="" @click="writeHabit">填寫使用者資料與習慣</a>
+                <a class="dropdown-item" href="" @click="writeHabit"
+                  >填寫使用者資料與習慣</a
+                >
                 <a class="dropdown-item" href="" @click="logout">登出</a>
               </div>
             </div>
@@ -280,14 +282,13 @@ export default {
     zeroCost: function () {
       this.cost = "";
     },
-    logout (){
-       this.$store.commit('setUserInfo', '', '')
-       this.$router.push( '/login')
+    logout() {
+      this.$store.commit("setUserInfo", "", "");
+      this.$router.push("/");
     },
-    writeHabit (){
-       this.$router.push('/LivingHabit')
+    writeHabit() {
+      this.$router.push("/LivingHabit");
     },
-   
   },
 };
 </script>
@@ -328,7 +329,7 @@ export default {
     align-content: space-between;
     align-items: center;
   }
-  .badge{
+  .badge {
     margin-right: 2vw;
   }
 }
