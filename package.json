@@ -24,6 +24,7 @@
     "popper.js": "^1.16.1",
     "scss": "^0.2.4",
     "scss-loader": "0.0.1",
+    "sqlite3": "^5.0.2",
     "view-design": "^4.5.0",
     "vue": "^2.5.2",
     "vue-element-multiple-message": "^1.0.1",
