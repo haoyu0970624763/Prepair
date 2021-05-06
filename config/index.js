@@ -10,11 +10,23 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      /*
+        api’: 表示所有以 /api 為開頭的請求，如我們的請求 this.$http.get(‘/api/getArticle’)
+        target: 將所有以 /api 為開頭請求轉發到 http://localhost:3000/api
+      */
+      '/api': {
+        target: 'http://localhost:3000/api/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      },
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8082, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

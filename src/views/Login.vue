@@ -37,8 +37,11 @@
           >
             立刻登錄
           </Button>
+          <div class="error">
+            <p>{{ errorMeg }}</p>
+          </div>
           <div class="option">
-            <span class="forget-pwd" @click.stop="forgetPwd">忘記密碼?</span>
+            <span class="forget-pwd" href="javascript:;">忘記密碼?</span>
           </div>
         </div>
         <!-- 注册模块 -->
@@ -85,78 +88,109 @@
 </template>
 
 <script>
-
 export default {
-  name: 'Login',
-  data () {
+  name: "Login",
+  data() {
     return {
       formLogin: {
-        userName: '',
-        userPassword: ''
+        userName: "",
+        userPassword: "",
       },
       formRegister: {
-        userName: '',
-        userPassword: '',
-        userPassword2: ''
+        userName: "",
+        userPassword: "",
+        userPassword2: "",
       },
       // 显示不同的view
       typeView: 0,
-      userToken: ''
-    }
+      errorMeg: "",
+    };
   },
   computed: {
     // 登陆按钮状态
-    isDisabled () {
-      return !(this.formLogin.userName && this.formLogin.userPassword)
+    isDisabled() {
+      return !(this.formLogin.userName && this.formLogin.userPassword);
     },
     // 注册按钮状态
-    isRegAble () {
-      return !(
+    isRegAble() {
+      if (
         this.formRegister.userName &&
         this.formRegister.userPassword &&
-        this.formRegister.userPassword2
-      )
-    }
+        this.formRegister.userPassword == this.formRegister.userPassword2
+      ) {
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
-  mounted () {
-    this.getCookie()
+  mounted() {
+    this.getCookie();
   },
   methods: {
     // 登录/注册tab切换
-    handleTab (type) {
-      this.typeView = type
-      this.clearInput()
+    handleTab(type) {
+      this.typeView = type;
+      this.clearInput();
     },
     // 立即登录
-    login () {
+    login() {
       if (this.isDisabled) {
-        return false
+        return false;
       }
-      this.$store.commit('setUserInfo', this.formLogin.userName, this.formLogin.password)
-      this.$router.push('/Homepage' )
+      this.$store.commit(
+        "setUserInfo",
+        this.formLogin.userName,
+        this.formLogin.userPassword
+      );
+
+      this.$http
+        .post("/api/login", {
+          id: this.formLogin.userName,
+          password: this.formLogin.userPassword,
+        })
+        .then((res) => {
+          this.errorMeg=res.body
+          if(this.errorMeg == "success"){
+            this.$router.push("/Homepage");
+          }
+        });
+      
     },
     // 立即注册
-    register () {
-      if (this.isRegAble) {
-        return false
-      }
-      this.$store.commit('setUserInfo', this.formRegister.userName, this.formRegister.password)
-      this.router.push('/Homepage')
+    register() {
+      this.$store.commit(
+        "setUserInfo",
+        this.formRegister.userName,
+        this.formRegister.userPassword
+      );
+
+      // axios.get('/', {params: ''})
+      this.$http
+        .post("/api/register", {
+          id: this.formRegister.userName,
+          password: this.formRegister.userPassword,
+        })
+        .then((res) => {
+          console.log("res", res);
+        });
+
+      this.$router.push("/Homepage");
     },
     // 清空输入框
-    clearInput () {
+    clearInput() {
       this.formLogin = {
-        userName: '',
-        userPwd: ''
-      }
+        userName: "",
+        userPwd: "",
+      };
       this.formRegister = {
-        userName: '',
-        userPwd2: '',
-        userPwd: ''
-      }
-    }
-  }
-}
+        userName: "",
+        userPwd2: "",
+        userPwd: "",
+      };
+    },
+  },
+};
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
@@ -196,12 +230,16 @@ export default {
     .input-box {
       margin-top: 30px;
     }
-
+    .error {
+      p {
+        color: red;
+      }
+    }
     .option {
-      text-align: left;
+      text-align: center;
       margin-top: 18px;
-      .forget-pwd,
-      .goback {
+
+      .forget-pwd {
         margin-top: 30px;
         float: right;
         font-size: 14px;
