@@ -32,7 +32,6 @@
             class="loginBtn"
             type="primary"
             :disabled="isDisabled"
-            :loading="isLoading"
             @click.stop="login"
           >
             立刻登錄
@@ -123,9 +122,6 @@ export default {
         return true;
       }
     },
-  },
-  mounted() {
-    this.getCookie();
   },
   methods: {
     // 登录/注册tab切换
