@@ -42,10 +42,10 @@
                   {{ name }}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#" @click="writeHabit"
+                  <a class="dropdown-item" @click="writeHabit"
                     >填寫使用者資料與習慣</a
                   >
-                  <a class="dropdown-item" href="#" @click="logout">登出</a>
+                  <a class="dropdown-item"  @click="logout">登出</a>
                 </div>
               </div>
             </li>

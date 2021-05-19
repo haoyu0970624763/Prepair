@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/views/Login.vue'
 import Homepage from '@/views/Homepage.vue'
 import LivingHabit from '@/views/LivingHabit.vue'
+import Roommate from '@/views/Roommate.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -21,6 +22,10 @@ export default new Router({
     {
       path: '/LivingHabit',
       component: LivingHabit
+    },
+    {
+      path: '/Roommate',
+      component: Roommate
     }
   ]
 })
