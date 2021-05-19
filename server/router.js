@@ -9,6 +9,9 @@ router.post('/login', (req, res, next) => {
 router.post('/register', (req, res, next) => {
     api.register(req, res, next);
 });
+router.post('/loadHouse', (req, res, next) => {
+    api.loadHouse(req, res, next);
+});
 router.post('/sendHabit', (req, res, next) => {
     api.sendHabit(req, res, next);
 });

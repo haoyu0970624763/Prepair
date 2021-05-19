@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="foldNavigation">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="javascript:;">去看房</a>
+            <a class="nav-link" @click.stop="GoToHouse">去看房</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="javascript:;">合約go</a>
@@ -167,7 +167,11 @@
                 <button type="button" class="btn btn-outline-info">
                   詳細資訊
                 </button>
-                <button type="button" class="btn btn-outline-info">
+                <button
+                  type="button"
+                  class="btn btn-outline-info"
+                  @click.stop="searchRoommate"
+                >
                   揪室友
                 </button>
               </div>
@@ -346,6 +350,9 @@ export default {
     writeHabit() {
       this.$router.push("/LivingHabit");
     },
+    GoToHouse() {
+      this.$router.push("/Homepage");
+    },
     loadHouse() {
       this.$http
         .post("/api/loadHouse", {
@@ -357,6 +364,9 @@ export default {
         .then((res) => {
           this.houses = res.body;
         });
+    },
+    searchRoommate() {
+      this.$router.push("/Roommate");
     },
   },
 };
