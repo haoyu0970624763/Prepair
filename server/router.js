@@ -12,6 +12,9 @@ router.post('/register', (req, res, next) => {
 router.post('/loadHouse', (req, res, next) => {
     api.loadHouse(req, res, next);
 });
+router.post('/getUser', (req, res, next) => {
+    api.getUser(req, res, next);
+});
 router.post('/sendHabit', (req, res, next) => {
     api.sendHabit(req, res, next);
 });

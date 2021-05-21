@@ -100,6 +100,7 @@ export default {
         userPassword: "",
         userPassword2: "",
       },
+      address: "",
       // 显示不同的view
       typeView: 0,
       errorMeg: "",
@@ -134,11 +135,7 @@ export default {
       if (this.isDisabled) {
         return false;
       }
-      this.$store.commit(
-        "setUserInfo",
-        this.formLogin.userName,
-        this.formLogin.userPassword
-      );
+      
 
       this.$http
         .post("/api/login", {
@@ -146,32 +143,30 @@ export default {
           password: this.formLogin.userPassword,
         })
         .then((res) => {
-          this.errorMeg=res.body
-          if(this.errorMeg == "success"){
+          this.errorMeg = res.body;
+          if (this.errorMeg == "success") {
+            this.$store.commit("name", this.formLogin.userName);
+            this.$store.commit("password", this.formLogin.userPassword);
             this.$router.push("/Homepage");
           }
         });
-      
     },
     // 立即注册
     register() {
-      this.$store.commit(
-        "setUserInfo",
-        this.formRegister.userName,
-        this.formRegister.userPassword
-      );
-
-      // axios.get('/', {params: ''})
       this.$http
         .post("/api/register", {
           id: this.formRegister.userName,
           password: this.formRegister.userPassword,
         })
         .then((res) => {
-          console.log("res", res);
+          this.address = res.body;
+          this.$store.commit("addr", this.address);
+          this.$router.push("/Homepage");
         });
 
-      this.$router.push("/Homepage");
+      this.$store.commit("name", this.formRegister.userName);
+      this.$store.commit("password", this.formRegister.userPassword);
+
     },
     // 清空输入框
     clearInput() {

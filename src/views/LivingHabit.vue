@@ -218,7 +218,6 @@
         >
           確認送出
         </button>
-        <div></div>
       </div>
     </div>
   </div>
@@ -230,7 +229,7 @@ export default {
   data() {
     return {
       name: this.$store.state.userName,
-      password: this.$store.state.userPassword,
+      password: this.$store.state.Password,
       isSmoking: "",
       isDrinking: "",
       isComing: "",
@@ -251,7 +250,6 @@ export default {
   },
   methods: {
     logout() {
-      this.$store.commit("setUserInfo", "", "");
       this.$router.push({ path: "/" });
     },
     trans() {
