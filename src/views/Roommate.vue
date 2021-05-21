@@ -65,30 +65,52 @@
       </div>
     </div>
 
-    <div>
-        
-    </div>
+    <div class="pair">
+      <div class="title">適合人選</div>
+      <div class="line"></div>
 
+      <div class="recommend_people">
+        <div class="person-region" id="first">
+          <div class="person">
+            <div class="face"></div>
+            <p>{{ this.$store.state.recommend1 }}</p>
+          </div>
+          <button type="button" class="btn btn-light">揪團租</button>
+        </div>
+        <div class="person-region" id="second">
+          <div class="person">
+            <div class="face"></div>
+            <p>{{ this.$store.state.recommend2 }}</p>
+          </div>
+          <button type="button" class="btn btn-light">揪團租</button>
+        </div>
+        <div class="person-region" id="third">
+          <div class="person">
+            <div class="face"></div>
+            <p>{{ this.$store.state.recommend3 }}</p>
+          </div>
+          <button type="button" class="btn btn-light">揪團租</button>
+        </div>
+        <div class="person-region" id="fourth">
+          <div class="person">
+            <div class="face"></div>
+            <p>{{ this.$store.state.recommend4 }}</p>
+          </div>
+          <button type="button" class="btn btn-light">揪團租</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      region: "南部",
-      city: "台南市",
-      township: "東區",
-      roomtype: "整層住家",
-      cost: "1萬以上",
-      message: "",
-      houses: "",
-    };
+    return {};
   },
-  mounted() {},
+  created() {},
   methods: {
     logout() {
-      this.$store.commit("setUserInfo", "", "");
       this.$router.push("/");
     },
     writeHabit() {
@@ -167,6 +189,118 @@ export default {
         right: 7.5vw;
         font-size: 32px;
         color: #7f7f7f;
+      }
+    }
+  }
+  .pair {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75vh;
+    position: relative;
+    top: 7.5vh;
+    background-color: #ebe5dd;
+    .title {
+      position: relative;
+      top: 50px;
+      left: 100px;
+      font-size: 36px;
+      font-weight: bold;
+      color: #ed7d31;
+    }
+    .line {
+      position: relative;
+      width: 81.25vw;
+      left: 100px;
+      top: 60px;
+      position: relative;
+      border-top: solid #acc0d8 5px;
+    }
+    .recommend_people {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      top: 80px;
+      left: 100px;
+      width: 100%;
+      height: 45vh;
+
+      #first {
+        position: relative;
+        left: 0px;
+        .person {
+          .face {
+            background-image: url("../assets/first.png");
+          }
+        }
+      }
+      #second {
+        position: relative;
+        left: 100px;
+        .person {
+          .face {
+            background-image: url("../assets/first.png");
+          }
+        }
+      }
+      #third {
+        position: relative;
+        left: 200px;
+        .person {
+          .face {
+            background-image: url("../assets/first.png");
+          }
+        }
+      }
+      #fourth {
+        position: relative;
+        left: 300px;
+        .person {
+          .face {
+            background-image: url("../assets/first.png");
+          }
+        }
+      }
+      .person-region {
+        position: relative;
+        width: 300px;
+        height: 400px;
+
+        .person {
+          position: relative;
+          width: 300px;
+          height: 350px;
+
+          background-image: url("../assets/frame.jpg");
+          background-position: center;
+          background-size: cover;
+          .face {
+            position: relative;
+            left: 80px;
+            top: 70px;
+            width: 125px;
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+          }
+          p {
+            width: 100px;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            top: 80px;
+            left: 100px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+          }
+        }
+
+        button {
+          position: relative;
+          top: 10px;
+          left: 100px;
+        }
       }
     }
   }

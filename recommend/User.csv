@@ -1,0 +1,441 @@
+<<<<<<< HEAD
+1,id,personality,smoke,drink,pet,wake,sleep,clean,bath,back,m_smoke,m_drink,m_back,m_noice,是否有上述沒提到的生活習慣但您覺得需要納入考量的?,性別,校系科系(填答範例:成大資訊工程系),年齡,總體來說，您與同寢室友的合住生活的滿意度如何?
+2,shirley234,ENTP,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,y,n,ok,y,exam,,女,資訊111,21-22,5
+3,Ada987,INFJ,n,n,want,7.b,10.~ 00.,day,y,y,n,ok,seldom,y,彼此的尊重,女,護理系,21-22,3
+4,Erica0419,INTP,n,seldom,want,11.a,0.~ 2.,month,rule,agree,n,y,n,n,還好 很隨和,女,護理系,21-22,4
+5,Eunice1009,INTJ,n,n,want,11.a,0.~ 2.,month,y,agree,n,ok,n,exam,弄髒我的地盤,女,護理系,19-20,3
+6,Flora560,ENTP,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,n,outside,y,n,n,,女,護理系,21-22,5
+7,Freda6,ISTP,n,seldom,want,7. ~ 9.,0.~ 2.,week,rule,n,n,ok,y,exam,個人生活習慣，ex:磨牙 腳臭,男,護理,21-22,3
+8,Juliet,ESFJ,n,seldom,y,11.以a,0.~ 2.,week,y,agree,n,y,y,exam,,女,護理系,21-22,5
+9,Sebastiane,INFJ,n,seldom,want,7.b,0.~ 2.,month,r,agree,n,n,seldom,exam,,女,工設,21-22,4
+10,Ziv,ESFJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,n,n,ok,y,exam,,女,成大資訊工程,19-20,5
+11,Sharon,INFP,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,n,n,ok,n,exam,,女,資訊工程學系,19-20,1
+12,Victoria,ISTP,n,seldom,want,9. ~ 11.,0.~ 2.,week,y,absence,n,ok,seldom,exam,,女,會計,21-22,3
+13,Hedy,ISFJ,n,n,n,7. ~ 9.,10.~ 00.,month,y,n,outside,ok,seldom,y,,男,資訊系,21-22,2
+14,Zebulon,ENFP,n,n,n,7. ~ 9.,0.~ 2.,month,y,y,n,ok,seldom,exam,睡眠,男,不分,19-20,3
+15,Sibyl,ISFP,n,seldom,n,9. ~ 11.,0.~ 2.,month,rule,agree,n,ok,n,y,,女,外文,21-22,5
+16,Yehudi,ISFJ,n,n,want,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,y,,女,金門大學社會工作學系,21-22,4
+17,Nicola,ENFJ,y,seldom,want,7. ~ 9.,0.~ 2.,week,y,absence,outside,y,n,exam,,女,金大社工系,21-22,5
+18,Zavier,ISFJ,n,seldom,n,11.a,2.a,month,y,agree,n,y,n,exam,,女,成大外文系,21-22,5
+19,Odelette,INFP,n,seldom,y,11.a,2.a,month,rule,y,outside,y,n,exam,,女,成大資訊工程系,21-22,4
+20,Wanda,INTJ,n,n,want,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,y,exam,沒有,女,成大光電系,21-22,4
+21,Ida,ISFJ,n,seldom,want,9. ~ 11.,0.~ 2.,week,rule,y,outside,y,n,n,,男,成大光電系,21-22,3
+22,Yehudi,ESFJ,n,n,n,7. ~ 9.,0.~ 2.,month,y,y,n,ok,seldom,exam,無,女,中山資訊管理系,21-22,5
+23,Xanthe,ISFP,n,seldom,want,11.a,0.~ 2.,month,y,agree,outside,ok,n,exam,打呼、磨牙、說夢話、夢遊、噴香水、玩遊戲,男,成大資訊工程系,21-22,3
+24,YALE,ENTP,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,n,,男,成大光電系,19-20,5
+25,Olivia,ENFP,n,seldom,want,9. ~ 11.,2.a,week,y,agree,outside,ok,n,exam,,男,成大光電,21-22,5
+26,XAVIER,ISFP,n,seldom,want,11.a,2.a,month,rule,y,outside,ok,y,exam,,男,成大資訊工程系,21-22,4
+27,Wythe,ENTJ,n,seldom,n,7. ~ 9.,10.~ 00.,week,y,n,n,ok,seldom,exam,食物味道,男,成大光電工程系,21-22,4
+28,Norma,ISTP,n,seldom,want,9. ~ 11.,0.~ 2.,week,y,absence,n,ok,seldom,exam,,女,成大會計,21-22,5
+29,Breenda,ISTP,n,seldom,want,9. ~ 11.,0.~ 2.,week,y,absence,n,ok,seldom,exam,,女,成大會計,21-22,5
+30,Xenia,ESTJ,n,n,n,11.a,reverse,month,y,agree,n,ok,n,exam,,女,成大資訊工程系,21-22,4
+31,Wyatt,ESFJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,rule,absence,n,ok,seldom,exam,,女,成大資訊工程系,21-22,4
+32,Wordsworth,ESTP,n,seldom,n,7. ~ 9.,10.~ 00.,week,y,agree,n,ok,seldom,y,,男,台大資管系,19-20,3
+33,Willie,ISTJ,n,n,want,7. ~ 9.,10.~ 00.,week,y,agree,y,ok,n,y,,女,成大化工,21-22,4
+34,Joyce,INFJ,n,seldom,n,7. ~ 9.,10.~ 00.,month,y,n,n,ok,y,y,,女,成大中國文學系,23-24,3
+35,Wilbert,ESFP,n,n,n,9. ~ 11.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,男,成大資訊工程,21-22,4
+36,Brook,INFJ,n,seldom,want,7. ~ 9.,10.~ 00.,week,y,agree,n,ok,seldom,exam,還好耶~~,女,北醫藥學系,19-20,5
+37,Valentine,ESFP,n,n,n,9. ~ 11.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,男,成大資訊工程,21-22,5
+38,Vic,ESTP,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,agree,n,ok,seldom,exam,是,男,成大生物科技與產業科學系,19-20,2
+39,Jennifer,ISFJ,n,seldom,y,7. ~ 9.,10.~ 00.,day,rule,n,n,ok,y,exam,,女,成大醫技,19-20,4
+40,Webb,ESFJ,n,seldom,n,7. ~ 9.,10.~ 00.,week,y,n,n,ok,y,exam,,女,成大資源系,23-24,3
+41,Carol,INTP,n,seldom,want,9. ~ 11.,2.a,month,rule,agree,outside,ok,seldom,exam,,男,成大資訊工程系,21-22,5
+42,Victor,INTJ,n,seldom,want,9. ~ 11.,2.a,month,y,agree,n,ok,n,y,,女,成大會計系,21-22,3
+43,Julie,INTJ,n,n,want,9. ~ 11.,0.~ 2.,month,y,absence,n,ok,seldom,n,,女,成大職能治療學系,21-22,3
+44,Warner,INFJ,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,absence,n,ok,y,exam,要求很多的,男,成大電機系,19-20,3
+45,Wardell,ENTP,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,y,n,ok,n,y,,女,成大工資,19-20,4
+46,Calista,INFP,n,seldom,want,9. ~ 11.,0.~ 2.,month,rule,agree,y,ok,seldom,exam,吃東西或洗澡習慣？,男,成大機械,23-24,4
+47,Vladimir,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,week,y,agree,n,ok,seldom,exam,,女,成大醫技系,21-22,4
+48,Blanche,ISFJ,n,n,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,exam,,女,成大工業資訊管理學系,19-20,4
+49,Virgil,INFJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,outside,ok,seldom,exam,,男,成大資源工程學系,21-22,4
+50,Poppy,ISFP,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,n,n,y,y,y,,女,成大經濟學系,21-22,3
+51,Vivian,ENTP,n,y,y,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,n,exam,開關燈時間,女,台大外文,21-22,4
+52,Winni,ESFP,n,seldom,y,7.b,10.~ 00.,month,rule,y,n,ok,y,exam,,男,成大職能治療系,21-22,4
+53,Walter,INFJ,n,n,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,n,exam,,女,成大職治系,19-20,5
+54,Cara,ISFJ,n,n,want,7. ~ 9.,10.~ 00.,month,y,agree,n,y,n,n,,女,成大職能治療系,19-20,4
+55,Pag,INTP,n,n,n,7. ~ 9.,10.~ 00.,week,rule,agree,n,n,n,exam,賭博跟嚼檳榔？,女,成大職能治療系,19-20,4
+56,Waldo,ISTP,n,seldom,want,11.a,2.a,week,y,agree,outside,ok,n,exam,,女,成大資訊工程系,25-26,4
+57,Catherine,INFJ,n,seldom,want,7. ~ 9.,10.~ 00.,week,y,y,n,ok,seldom,exam,作息要跟自己差不多,女,成大電機系,21-22,4
+58,Volker,INFP,n,n,want,7.b,10.~ 00.,week,rule,agree,n,n,seldom,exam,,女,成大職能治療系,21-22,4
+59,Quintina,ENTJ,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,y,n,ok,n,exam,,男,成大化學工程學系,19-20,5
+60,Una,ESTJ,n,seldom,want,7. ~ 9.,10.~ 00.,week,y,n,n,ok,seldom,exam,沒有,女,成大化工系,17-18,5
+61,Cathy,INTJ,n,seldom,y,9. ~ 11.,2.a,month,y,agree,outside,ok,n,exam,,女,成大法律系,19-20,5
+62,Uriah,ENFJ,n,seldom,n,11.a,0.~ 2.,week,rule,agree,n,ok,seldom,y,,女,成大資訊工程系,21-22,4
+63,Betty,ESFJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,n,n,ok,y,y,打鼾 鬧鐘響不停,女,成大經濟系,19-20,4
+64,ULYSSES,ENTP,n,seldom,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,exam,,女,成大職能治療學系,21-22,4
+65,Meredith,ENTJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,seldom,y,,男,成大航太,21-22,5
+66,Carlin,INFJ,n,n,y,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,n,exam,,女,成大職治系,19-20,5
+67,Quintion,INFP,n,n,n,9. ~ 11.,reverse,day,y,n,outside,ok,y,y,無,女,大葉造型藝術系,21-22,2
+68,Tyrone,ESFJ,n,seldom,n,7. ~ 9.,2.a,week,rule,agree,n,ok,seldom,exam,,女,成大會計系,19-20,5
+69,Constance,INTJ,n,seldom,n,7. ~ 9.,2.a,month,rule,agree,n,ok,seldom,n,,女,成大職能治療系,21-22,3
+70,Troy,INTJ,n,seldom,want,9. ~ 11.,10.~ 00.,month,y,agree,n,ok,n,exam,,女,哥廷根大學生物系（原成大醫技系）,19-20,3
+71,Prudence,ISTJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,agree,n,y,n,n,,女,成大職能治療系,19-20,5
+72,Marshall,INTJ,n,n,want,7.b,10.~ 00.,month,y,agree,n,ok,seldom,y,有那種大半夜用平板打音樂遊戲一直敲螢幕很吵又戴耳機沉浸在自己世界不斷對外界施放噪音的人,男,成大化學工程系,19-20,2
+73,Yuri,ENFJ,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,exam,無,男,成大化學,19-20,5
+74,Eve,ENTJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,y,n,y,n,n,,男,成大化學,19-20,4
+75,Crystal,ESFJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,女,成大環境工程系,19-20,4
+76,Zoe,ENTJ,n,seldom,y,7. ~ 9.,0.~ 2.,week,y,y,n,ok,n,y,,男,成大統計學系,21-22,4
+77,Maxine,ISFJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,y,agree,n,y,seldom,exam,,女,成大化工系,19-20,5
+78,Radomil,ENTJ,n,n,n,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,女,成大會計系,19-20,3
+79,Clementine,ENFJ,n,seldom,y,7.b,2.a,month,y,agree,outside,ok,n,exam,,女,成大物理治療系,21-22,3
+80,Jessie,ESFJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,outside,ok,seldom,exam,,女,成大經濟系,19-20,4
+81,Matthew,ESFJ,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,agree,outside,ok,seldom,exam,,女,成大法律系,19-20,2
+82,Spring,INTJ,n,seldom,n,9. ~ 11.,2.a,month,y,agree,n,ok,seldom,y,沒有,男,成大統計學系,19-20,4
+83,Randolph,ESFJ,n,seldom,y,7. ~ 9.,0.~ 2.,day,y,agree,n,ok,n,exam,,女,雲科大營建工程系,19-20,3
+84,Joanna,ESFJ,n,seldom,n,9. ~ 11.,10.~ 00.,month,y,n,n,ok,y,y,,女,機械,21-22,5
+85,Jill,ISTJ,n,seldom,n,9. ~ 11.,0.~ 2.,month,y,absence,n,ok,n,exam,不倒垃圾,女,成大資源工程,19-20,4
+86,Wendy,ENTJ,n,n,n,11.a,2.a,week,y,absence,n,ok,seldom,n,,女,成大外文,21-22,4
+87,Josephine,ENFJ,n,seldom,y,9. ~ 11.,0.~ 2.,week,n,absence,n,ok,n,n,,女,成大資源工程系,21-22,4
+88,Tor,ISFJ,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,agree,n,ok,seldom,y,,女,成大會計,21-22,5
+89,Roxanne,ISFP,n,y,want,9. ~ 11.,reverse,month,rule,agree,n,ok,seldom,y,,男,光電111 ncku,19-20,3
+90,Merle,ESFJ,n,n,want,7. ~ 9.,10.~ 00.,month,y,agree,n,ok,seldom,y,,男,成大電機,19-20,3
+91,Toby,INFP,n,seldom,y,11.a,2.a,month,rule,absence,n,ok,n,exam,,女,成大化學系,19-20,3
+92,Timothy,INTP,n,n,n,9. ~ 11.,0.~ 2.,month,rule,n,n,n,seldom,y,,女,台大電機系,21-22,3
+93,Claire,INTP,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,agree,n,ok,seldom,exam,,女,成大化學工程系,21-22,4
+94,Modesty,INFP,n,seldom,want,7. ~ 9.,0.~ 2.,day,y,y,n,y,seldom,y,隨便碰別人的東西,女,成大化工系,19-20,4
+95,Raymond,ESTP,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,absence,outside,ok,seldom,exam,,男,成大電機,21-22,3
+96,Daisy,ISTJ,n,seldom,n,9. ~ 11.,2.a,month,rule,y,outside,ok,seldom,y,,男,成大資訊工程系,21-22,3
+97,Cindy,ESFJ,n,n,n,9. ~ 11.,0.~ 2.,month,y,n,n,ok,seldom,y,不同的睡眠時間,女,成大法律系,21-22,4
+98,Vanessa,INTP,y,seldom,want,11.a,0.~ 2.,month,y,agree,outside,ok,n,exam,,男,成大機械工程所,21-22,1
+99,Regan,ENFJ,n,y,want,11.a,2.a,month,y,agree,outside,y,n,exam,,女,成大法律系,23-24,4
+100,Quincy,ISTJ,y,seldom,want,7. ~ 9.,10.~ 00.,day,y,agree,outside,ok,n,y,,女,成大資訊工程系,21-22,5
+101,Bess,ENTP,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,n,,女,台大經濟,21-22,5
+102,Tess,INFP,n,seldom,y,11.a,0.~ 2.,month,y,agree,n,y,n,exam,,女,成大職能治療學系,23-24,5
+103,Montague,INTJ,n,n,n,7. ~ 9.,0.~ 2.,month,y,n,n,ok,y,y,,女,成大政治,21-22,4
+104,Rex,ENTJ,n,n,n,11.a,2.a,n,y,y,outside,ok,n,exam,愛放屁 說夢話,男,成大資訊工程系,21-22,2
+105,Ursula,ENFP,n,n,want,11.a,0.~ 2.,month,rule,y,n,ok,seldom,exam,作息不同,女,成大藥學,21-22,4
+106,Jean,ENTJ,n,n,n,7. ~ 9.,0.~ 2.,week,y,agree,n,y,seldom,exam,室友衛生習慣,女,成大資訊工程系,19-20,4
+107,Cherry,ISTJ,n,seldom,want,9. ~ 11.,2.a,month,y,n,outside,y,seldom,exam,,女,交大管理科學系,19-20,4
+108,Quennel,ISFJ,n,seldom,want,11.a,0.~ 2.,week,rule,y,outside,ok,n,exam,,女,成大外文系,19-20,5
+109,Charlotte,INTP,n,seldom,want,11.a,2.a,month,y,agree,n,ok,seldom,exam,,女,成大資訊工程系,21-22,4
+110,Laura,INFP,n,n,n,11.a,2.a,week,y,agree,n,ok,n,exam,,女,成大工設系,21-22,4
+111,Ivy,INTP,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,y,n,y,n,exam,,女,成大工設系,19-20,5
+112,Athena,INTP,n,seldom,y,7.b,0.~ 2.,week,y,agree,n,ok,y,exam,,女,成大統計學系,21-22,2
+113,Truda,ESFJ,n,seldom,y,9. ~ 11.,0.~ 2.,month,rule,agree,outside,ok,n,exam,,男,中國醫藥大學藥學系,21-22,5
+114,Rod,ENTJ,y,y,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,y,n,y,,女,交大管理科學系,21-22,4
+115,Amy,ESFJ,n,seldom,want,9. ~ 11.,10.~ 00.,month,y,y,n,ok,seldom,y,打呼,女,交大管理科學系,19-20,4
+116,Zona,ISTJ,y,y,want,11.a,2.a,week,y,agree,y,y,n,y,,男,交大土木,19-20,4
+117,Primo,ENFP,n,seldom,y,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,n,exam,,女,成大建築系,19-20,4
+118,Monica,ISTJ,n,n,n,7. ~ 9.,2.a,month,rule,agree,n,ok,seldom,exam,,男,成大台文系,21-22,3
+119,Anna,ESFJ,n,n,want,7.b,10.~ 00.,week,y,y,n,ok,seldom,y,,男,國防醫學系,21-22,5
+120,Hedy,INTP,n,n,want,7.b,0.~ 2.,week,y,agree,n,ok,seldom,exam,,女,成大光電系,19-20,4
+121,Dana,ENFP,n,seldom,y,9. ~ 11.,0.~ 2.,n,y,agree,outside,y,n,exam,,女,交大管理科學系,19-20,5
+122,Angela,INFP,n,seldom,n,7.b,0.~ 2.,week,y,agree,n,ok,seldom,exam,吃完東西的垃圾有沒有馬上丟掉（其實跟保持環境整潔差不多XD,女,成大生物醫學工程系,23-24,5
+123,Hannah,INFP,n,seldom,y,11.a,reverse,month,n,y,n,ok,seldom,n,,女,成大水利,23-24,5
+124,Stephanie,ISFJ,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,n,n,ok,y,y,,女,成大中國文學系,21-22,3
+125,Rodney,ISTJ,n,seldom,want,9. ~ 11.,2.a,month,rule,agree,n,ok,n,y,,男,台大資訊工程學系,21-22,3
+126,Dale,ISTP,n,n,n,7. ~ 9.,10.~ 00.,week,y,agree,n,ok,y,exam,,女,成大不分系,19-20,4
+127,Erica,ENFP,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,agree,n,ok,seldom,exam,,女,成大心理系,19-20,4
+128,Moses,ISFJ,n,seldom,n,9. ~ 11.,2.a,week,rule,agree,n,ok,seldom,y,,女,成大醫技系,19-20,4
+129,Kimberley,INFJ,n,seldom,want,9. ~ 11.,0.~ 2.,day,y,y,outside,ok,n,exam,,女,中正化工,23-24,5
+130,Prescott,ISFP,y,seldom,y,7. ~ 9.,0.~ 2.,month,y,absence,outside,n,y,exam,沒有,男,中正法律系,19-20,5
+131,Ronald,ESTJ,n,seldom,n,9. ~ 11.,0.~ 2.,day,y,agree,n,y,seldom,exam,關心室友的程度、與人社交的心理狀態,女,成大資訊工程系,19-20,3
+132,Daphne,ENFP,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,agree,n,ok,y,exam,開窗戶開門使用大燈,女,成資,21-22,4
+133,Amity,ENFJ,n,seldom,y,7. ~ 9.,10.~ 00.,month,rule,agree,n,ok,n,exam,,女,中正法律所,23-24,5
+134,Gloria,ENTJ,n,seldom,y,7. ~ 9.,0.~ 2.,week,y,n,n,ok,y,exam,,男,成大航太工程學系,19-20,3
+135,Kitty,ENFJ,n,seldom,n,9. ~ 11.,2.a,n,y,agree,n,y,n,exam,,女,成大資訊工程系,23-24,5
+136,Murphy,INFJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,y,y,,女,成大醫學檢驗生物技術學系,19-20,4
+137,Basia,ENTJ,n,seldom,want,7. ~ 9.,10.~ 00.,n,rule,agree,n,ok,seldom,y,,女,成大醫技系,19-20,3
+138,Rory,ENFP,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,absence,n,ok,n,exam,,男,成大資訊工程系,21-22,4
+139,Antonia,ENTP,n,seldom,n,9. ~ 11.,2.a,month,rule,absence,outside,ok,seldom,y,,男,中正物理,21-22,1
+140,Plato,ENFJ,n,seldom,want,9. ~ 11.,0.~ 2.,day,y,y,n,ok,seldom,exam,,男,成大醫技,19-20,4
+141,Leona,INTJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,y,agree,n,y,n,n,,男,成大資訊工程系,19-20,5
+142,Royal,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,n,rule,y,n,ok,seldom,y,鬧鐘不關,女,成大資訊工程學系,21-22,4
+143,Irene,INFP,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,y,n,exam,,女,成大機械,21-22,4
+144,Winifred,ESFJ,n,y,n,11.a,reverse,month,rule,y,outside,ok,n,n,,男,成大資訊工程系,21-22,4
+145,Helen,ENTJ,n,seldom,n,7. ~ 9.,0.~ 2.,day,y,n,n,y,n,y,,女,東華國際企業學系,19-20,3
+146,Nathaniel,INFP,n,seldom,want,11.a,reverse,month,rule,agree,outside,ok,seldom,n,,男,成大資訊工程系,21-22,5
+147,Philip,ISFJ,n,n,n,7. ~ 9.,0.~ 2.,week,y,agree,outside,y,n,n,,女,成大資訊工程系,21-22,4
+148,Amanda,INTJ,n,seldom,want,9. ~ 11.,2.a,week,y,n,outside,ok,n,exam,,男,成大資訊工程系,21-22,4
+149,Rudolf,ENTJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,outside,y,n,n,,男,成大資訊工程系,21-22,5
+150,Grace,INFJ,n,seldom,want,9. ~ 11.,2.a,month,y,agree,outside,y,seldom,exam,,女,成大資訊工程系,21-22,4
+151,Arabela,INTJ,n,seldom,want,7.b,0.~ 2.,week,y,agree,outside,ok,seldom,y,,女,北市大英教系,21-22,5
+152,Honey,ENFJ,n,seldom,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,n,exam,,女,北市大英語教學系,19-20,4
+153,Eudora,INFP,y,seldom,want,9. ~ 11.,2.a,week,y,agree,outside,y,seldom,exam,,女,逢甲大學土地管理學系,21-22,5
+154,Nestor,INFP,n,seldom,want,11.a,reverse,month,rule,y,outside,ok,n,exam,,男,成大化學工程系,21-22,4
+155,Fanny,ISTP,n,seldom,y,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,exam,,女,成大電機工程系,21-22,4
+156,Tara,INTJ,n,seldom,want,7. ~ 9.,2.a,week,rule,y,outside,ok,n,n,,男,成大資訊工程系,21-22,4
+157,Emma,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,n,rule,agree,outside,ok,seldom,n,無,女,北市大英語教學系,21-22,5
+158,Ryan,ISFJ,n,seldom,y,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,seldom,exam,,女,成大測量系,21-22,5
+159,Ava,INTJ,n,seldom,n,11.a,0.~ 2.,week,y,n,n,ok,n,exam,,女,成大資訊工程系,21-22,3
+160,SAM,ISFJ,n,seldom,want,7. ~ 9.,10.~ 00.,month,rule,absence,outside,ok,seldom,y,打呼、關門很用力 (但打呼好像不能控制就是了QAQ,女,成大土木,19-20,3
+161,Marina,ISTJ,n,seldom,want,7. ~ 9.,10.~ 00.,month,rule,agree,n,ok,seldom,exam,耐熱程度(什麼時候可以開冷氣、幾人在時可以開冷氣etc),女,成大資訊工程系,21-22,5
+162,Destiny,ESTJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,y,希望可以叫我起床上課考試,男,成大資訊工程系,21-22,4
+163,Samuel,ISFJ,n,seldom,want,9. ~ 11.,0.~ 2.,month,rule,n,outside,ok,seldom,exam,,男,成大資訊工程系,21-22,5
+164,Alisa,INTP,n,seldom,n,7. ~ 9.,10.~ 00.,day,y,n,n,ok,y,exam,,女,東華教育系,21-22,4
+165,Donna,ISFJ,n,seldom,y,9. ~ 11.,0.~ 2.,week,y,absence,n,ok,seldom,exam,,女,臺大圖書資訊學系,21-22,4
+166,Phil,INFJ,n,seldom,want,9. ~ 11.,10.~ 00.,month,y,agree,n,ok,seldom,exam,,女,成大會計系,21-22,5
+167,Lynn,INTJ,n,n,n,7. ~ 9.,10.~ 00.,week,y,agree,n,y,seldom,exam,,女,台大生命科學系,21-22,4
+168,Santiago,ENTJ,n,n,want,11.a,2.a,month,n,y,outside,ok,n,exam,,女,北市大公共系,21-22,5
+169,Barbara,ISTJ,n,seldom,want,7. ~ 9.,2.a,week,y,agree,n,ok,seldom,exam,,女,Ohio State University 室內設計,21-22,5
+170,Debby,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,week,y,agree,outside,y,seldom,exam,打呼,男,成大資訊工程系,19-20,4
+171,Saxon,INFP,n,n,want,9. ~ 11.,0.~ 2.,day,y,agree,n,n,seldom,y,,女,台大工商管理企管組,21-22,5
+172,Bella,ISTJ,n,seldom,y,11.a,2.a,day,y,agree,outside,y,seldom,exam,不倒垃圾（尤其經期的廁所垃圾真的絕了,女,中正財法,21-22,3
+173,Violet,INTJ,n,n,y,7.b,0.~ 2.,week,y,n,n,ok,y,y,味道,女,台大工管,19-20,3
+174,Diana,ESTJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,y,y,exam,打呼,男,成大電機,19-20,5
+175,Florence,ISTJ,n,n,n,7. ~ 9.,0.~ 2.,week,y,n,n,n,seldom,exam,打呼,女,台大日文,21-22,5
+176,Eartha,ISTJ,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,agree,n,ok,n,y,,男,成大資訊工程,21-22,3
+177,Scott,ISFJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,y,n,ok,y,exam,,女,成大歷史系,21-22,4
+178,Lorraine,ENFP,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,y,exam,目前沒有,女,中正法律系研究所二年級,23-24,3
+179,Nicky,ESFP,n,seldom,want,9. ~ 11.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,男,成大航太系,19-20,4
+180,Fay,ISTJ,n,seldom,want,9. ~ 11.,10.~ 00.,month,y,agree,n,ok,seldom,y,鬧鐘設很早，但永遠聽不到，或是關掉繼續睡；開關門很大聲；有人在睡覺的時候依舊不會控制音量；食物吃完不馬上丟,女,台大法律系,19-20,5
+181,Edwina,ENTJ,n,seldom,n,9. ~ 11.,2.a,week,y,agree,n,y,seldom,y,,女,中山海洋環境及工程學系,21-22,4
+182,Perry,ISFP,n,seldom,n,7. ~ 9.,0.~ 2.,week,rule,agree,outside,y,n,exam,,女,成大建築系,19-20,5
+183,Sid,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,absence,outside,y,seldom,exam,,女,交大應用化學系,21-22,2
+184,Alice,INFJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,outside,y,n,n,,男,成大資訊工程系,21-22,4
+185,Eileen,ISTJ,n,seldom,y,11.a,2.a,month,y,y,n,y,n,exam,,女,成大資源系,19-20,5
+186,Noel,ESFJ,n,seldom,y,9. ~ 11.,0.~ 2.,month,y,agree,outside,ok,seldom,exam,,女,北市大公共系,21-22,5
+187,Silvester,ISFJ,n,seldom,want,9. ~ 11.,2.a,week,rule,agree,n,ok,seldom,exam,,女,中正法律所,23-24,4
+188,Gina,ISTJ,n,seldom,want,11.a,reverse,month,y,agree,outside,ok,n,exam,不要偷吃醬,男,成大資訊工程系,21-22,5
+189,Payne,INTJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,absence,n,ok,seldom,exam,,男,成大光電與工程學系,21-22,3
+190,Elsa,ISFP,n,y,want,9. ~ 11.,2.a,week,y,y,n,y,y,y,,男,成大資訊工程系,21-22,4
+191,Norton,INTJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,rule,agree,n,ok,n,exam,,男,成大資訊工程系,21-22,4
+192,Michelle,ENTJ,n,seldom,want,7. ~ 9.,10.~ 00.,week,y,agree,n,y,n,n,,女,東海法律系,23-24,4
+193,Solomon,ISTJ,n,n,want,7. ~ 9.,0.~ 2.,week,rule,absence,n,y,seldom,y,,女,成大資訊工程系,21-22,3
+194,Georgia,ISTJ,n,n,want,7. ~ 9.,0.~ 2.,month,y,n,n,ok,seldom,y,手機鬧鐘一直響但不關有夠靠北,女,交大電子所/中正通訊系,23-24,5
+195,Oliver,ISTJ,n,seldom,n,9. ~ 11.,10.~ 00.,month,y,agree,n,ok,seldom,y,鬧鐘設很早，但永遠聽不到，或是關掉繼續睡；開關門很大聲；有人在睡覺的時候依舊不會控制音量；食物吃完不馬上丟,女,台大法律系,19-20,5
+196,Vivien,INFP,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,outside,ok,seldom,exam,你們可以考慮問一下能不能接受室友偷尻尻,男,成大資訊工程,21-22,4
+197,Spencer,ESFP,n,n,y,7. ~ 9.,0.~ 2.,month,rule,n,n,y,seldom,exam,,女,成大電機系,19-20,4
+198,Patsy,ESFJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,absence,n,ok,y,exam,,女,清華大學教育與學習科技學系,21-22,3
+199,Doris,ENTJ,n,seldom,n,9. ~ 11.,0.~ 2.,month,y,n,outside,ok,n,y,,女,長庚大學護理系,19-20,3
+200,Alexandra,INTJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,n,n,y,seldom,exam,洗澡時間,女,長庚護理,21-22,5
+201,Oren,INTJ,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,y,outside,ok,n,y,否,男,成大資訊工程系,19-20,3
+202,Dorothy,INFP,n,seldom,n,7. ~ 9.,0.~ 2.,week,rule,n,n,ok,y,exam,,女,臺北市立大學英語教學系,21-22,4
+203,Stanley,INFP,n,seldom,n,7. ~ 9.,0.~ 2.,week,rule,n,n,ok,y,exam,,女,臺北市立大學英語教學系,21-22,4
+204,Megan,ISFJ,n,seldom,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,n,exam,,女,東吳企業管理系,19-20,5
+205,Patrick,ISTP,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,女,成大資訊工程系,21-22,5
+206,Emily,ISTP,n,seldom,want,7. ~ 9.,0.~ 2.,month,y,absence,outside,ok,seldom,n,,男,成大生技系,19-20,4
+207,Adele,ENFJ,n,n,n,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,seldom,y,,女,中原工業,21-22,4
+208,Steward,ISFJ,n,y,y,11.a,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,女,中原工業系,21-22,5
+209,Parker,ISFJ,n,n,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,exam,,女,長庚大學護理系,19-20,4
+210,Steven,ENFP,n,seldom,y,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,y,y,,女,成大資訊工程系,19-20,3
+211,Virginia,ENFJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,agree,outside,ok,seldom,exam,,女,中原大學會計系,21-22,5
+212,Gemma,ISTP,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,absence,outside,y,n,exam,睡覺打呼,男,成大資訊系,21-22,4
+213,Faith,INTP,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,absence,n,ok,seldom,exam,,男,成大光電系,21-22,5
+214,Theodore,ENTP,n,n,n,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,女,成大資訊工程系,21-22,5
+215,Adora,ESFJ,n,seldom,want,11.a,0.~ 2.,month,y,agree,outside,ok,n,exam,無,女,成大資訊工程系,21-22,5
+216,Teman,ENTP,n,seldom,want,7. ~ 9.,2.a,month,rule,y,outside,y,seldom,exam,洗澡頻率，垃圾清潔頻率,男,台東大學綠資,23-24,5
+217,Murray,ESTJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,n,y,n,exam,,女,成大資訊工程系,19-20,4
+218,Dora,ESTJ,n,n,want,7. ~ 9.,10.~ 00.,week,y,agree,n,ok,seldom,exam,,女,成大政治,21-22,5
+219,Ternence,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,agree,n,y,seldom,exam,個人衛生習慣（位置的整潔度、外食垃圾會不會放過夜）,男,成大資訊工程學系,21-22,4
+=======
+1,name,personality,smoke,drink,pet,wake,sleep,clean,bath,back,m_smoke,m_drink,m_back,m_noice,是否有上述沒提到的生活習慣但您覺得需要納入考量的?,性別,校系科系(填答範例:成大資訊工程系),年齡,總體來說，您與同寢室友的合住生活的滿意度如何?
+2,1,ENTP,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,y,n,ok,y,exam,,女,資訊111,21-22,5
+3,2,INFJ,n,n,want,7.b,10.~ 00.,day,y,y,n,ok,seldom,y,彼此的尊重,女,護理系,21-22,3
+4,3,INTP,n,seldom,want,11.a,0.~ 2.,month,rule,agree,n,y,n,n,還好 很隨和,女,護理系,21-22,4
+5,4,INTJ,n,n,want,11.a,0.~ 2.,month,y,agree,n,ok,n,exam,弄髒我的地盤,女,護理系,19-20,3
+6,5,ENTP,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,n,outside,y,n,n,,女,護理系,21-22,5
+7,6,ISTP,n,seldom,want,7. ~ 9.,0.~ 2.,week,rule,n,n,ok,y,exam,個人生活習慣，ex:磨牙 腳臭,男,護理,21-22,3
+8,7,ESFJ,n,seldom,y,11.以a,0.~ 2.,week,y,agree,n,y,y,exam,,女,護理系,21-22,5
+9,8,INFJ,n,seldom,want,7.b,0.~ 2.,month,r,agree,n,n,seldom,exam,,女,工設,21-22,4
+10,9,ESFJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,n,n,ok,y,exam,,女,成大資訊工程,19-20,5
+11,10,INFP,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,n,n,ok,n,exam,,女,資訊工程學系,19-20,1
+12,11,ISTP,n,seldom,want,9. ~ 11.,0.~ 2.,week,y,absence,n,ok,seldom,exam,,女,會計,21-22,3
+13,12,ISFJ,n,n,n,7. ~ 9.,10.~ 00.,month,y,n,outside,ok,seldom,y,,男,資訊系,21-22,2
+14,13,ENFP,n,n,n,7. ~ 9.,0.~ 2.,month,y,y,n,ok,seldom,exam,睡眠,男,不分,19-20,3
+15,14,ISFP,n,seldom,n,9. ~ 11.,0.~ 2.,month,rule,agree,n,ok,n,y,,女,外文,21-22,5
+16,15,ISFJ,n,n,want,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,y,,女,金門大學社會工作學系,21-22,4
+17,16,ENFJ,y,seldom,want,7. ~ 9.,0.~ 2.,week,y,absence,outside,y,n,exam,,女,金大社工系,21-22,5
+18,17,ISFJ,n,seldom,n,11.a,2.a,month,y,agree,n,y,n,exam,,女,成大外文系,21-22,5
+19,18,INFP,n,seldom,y,11.a,2.a,month,rule,y,outside,y,n,exam,,女,成大資訊工程系,21-22,4
+20,19,INTJ,n,n,want,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,y,exam,沒有,女,成大光電系,21-22,4
+21,20,ISFJ,n,seldom,want,9. ~ 11.,0.~ 2.,week,rule,y,outside,y,n,n,,男,成大光電系,21-22,3
+22,21,ESFJ,n,n,n,7. ~ 9.,0.~ 2.,month,y,y,n,ok,seldom,exam,無,女,中山資訊管理系,21-22,5
+23,22,ISFP,n,seldom,want,11.a,0.~ 2.,month,y,agree,outside,ok,n,exam,打呼、磨牙、說夢話、夢遊、噴香水、玩遊戲,男,成大資訊工程系,21-22,3
+24,23,ENTP,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,n,,男,成大光電系,19-20,5
+25,24,ENFP,n,seldom,want,9. ~ 11.,2.a,week,y,agree,outside,ok,n,exam,,男,成大光電,21-22,5
+26,25,ISFP,n,seldom,want,11.a,2.a,month,rule,y,outside,ok,y,exam,,男,成大資訊工程系,21-22,4
+27,26,ENTJ,n,seldom,n,7. ~ 9.,10.~ 00.,week,y,n,n,ok,seldom,exam,食物味道,男,成大光電工程系,21-22,4
+28,27,ISTP,n,seldom,want,9. ~ 11.,0.~ 2.,week,y,absence,n,ok,seldom,exam,,女,成大會計,21-22,5
+29,28,ISTP,n,seldom,want,9. ~ 11.,0.~ 2.,week,y,absence,n,ok,seldom,exam,,女,成大會計,21-22,5
+30,29,ESTJ,n,n,n,11.a,reverse,month,y,agree,n,ok,n,exam,,女,成大資訊工程系,21-22,4
+31,30,ESFJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,rule,absence,n,ok,seldom,exam,,女,成大資訊工程系,21-22,4
+32,31,ESTP,n,seldom,n,7. ~ 9.,10.~ 00.,week,y,agree,n,ok,seldom,y,,男,台大資管系,19-20,3
+33,32,ISTJ,n,n,want,7. ~ 9.,10.~ 00.,week,y,agree,y,ok,n,y,,女,成大化工,21-22,4
+34,33,INFJ,n,seldom,n,7. ~ 9.,10.~ 00.,month,y,n,n,ok,y,y,,女,成大中國文學系,23-24,3
+35,34,ESFP,n,n,n,9. ~ 11.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,男,成大資訊工程,21-22,4
+36,35,INFJ,n,seldom,want,7. ~ 9.,10.~ 00.,week,y,agree,n,ok,seldom,exam,還好耶~~,女,北醫藥學系,19-20,5
+37,36,ESFP,n,n,n,9. ~ 11.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,男,成大資訊工程,21-22,5
+38,37,ESTP,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,agree,n,ok,seldom,exam,是,男,成大生物科技與產業科學系,19-20,2
+39,38,ISFJ,n,seldom,y,7. ~ 9.,10.~ 00.,day,rule,n,n,ok,y,exam,,女,成大醫技,19-20,4
+40,39,ESFJ,n,seldom,n,7. ~ 9.,10.~ 00.,week,y,n,n,ok,y,exam,,女,成大資源系,23-24,3
+41,40,INTP,n,seldom,want,9. ~ 11.,2.a,month,rule,agree,outside,ok,seldom,exam,,男,成大資訊工程系,21-22,5
+42,41,INTJ,n,seldom,want,9. ~ 11.,2.a,month,y,agree,n,ok,n,y,,女,成大會計系,21-22,3
+43,42,INTJ,n,n,want,9. ~ 11.,0.~ 2.,month,y,absence,n,ok,seldom,n,,女,成大職能治療學系,21-22,3
+44,43,INFJ,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,absence,n,ok,y,exam,要求很多的,男,成大電機系,19-20,3
+45,44,ENTP,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,y,n,ok,n,y,,女,成大工資,19-20,4
+46,45,INFP,n,seldom,want,9. ~ 11.,0.~ 2.,month,rule,agree,y,ok,seldom,exam,吃東西或洗澡習慣？,男,成大機械,23-24,4
+47,46,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,week,y,agree,n,ok,seldom,exam,,女,成大醫技系,21-22,4
+48,47,ISFJ,n,n,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,exam,,女,成大工業資訊管理學系,19-20,4
+49,48,INFJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,outside,ok,seldom,exam,,男,成大資源工程學系,21-22,4
+50,49,ISFP,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,n,n,y,y,y,,女,成大經濟學系,21-22,3
+51,50,ENTP,n,y,y,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,n,exam,開關燈時間,女,台大外文,21-22,4
+52,51,ESFP,n,seldom,y,7.b,10.~ 00.,month,rule,y,n,ok,y,exam,,男,成大職能治療系,21-22,4
+53,52,INFJ,n,n,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,n,exam,,女,成大職治系,19-20,5
+54,53,ISFJ,n,n,want,7. ~ 9.,10.~ 00.,month,y,agree,n,y,n,n,,女,成大職能治療系,19-20,4
+55,54,INTP,n,n,n,7. ~ 9.,10.~ 00.,week,rule,agree,n,n,n,exam,賭博跟嚼檳榔？,女,成大職能治療系,19-20,4
+56,55,ISTP,n,seldom,want,11.a,2.a,week,y,agree,outside,ok,n,exam,,女,成大資訊工程系,25-26,4
+57,56,INFJ,n,seldom,want,7. ~ 9.,10.~ 00.,week,y,y,n,ok,seldom,exam,作息要跟自己差不多,女,成大電機系,21-22,4
+58,57,INFP,n,n,want,7.b,10.~ 00.,week,rule,agree,n,n,seldom,exam,,女,成大職能治療系,21-22,4
+59,58,ENTJ,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,y,n,ok,n,exam,,男,成大化學工程學系,19-20,5
+60,59,ESTJ,n,seldom,want,7. ~ 9.,10.~ 00.,week,y,n,n,ok,seldom,exam,沒有,女,成大化工系,17-18,5
+61,60,INTJ,n,seldom,y,9. ~ 11.,2.a,month,y,agree,outside,ok,n,exam,,女,成大法律系,19-20,5
+62,61,ENFJ,n,seldom,n,11.a,0.~ 2.,week,rule,agree,n,ok,seldom,y,,女,成大資訊工程系,21-22,4
+63,62,ESFJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,n,n,ok,y,y,打鼾 鬧鐘響不停,女,成大經濟系,19-20,4
+64,63,ENTP,n,seldom,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,exam,,女,成大職能治療學系,21-22,4
+65,64,ENTJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,seldom,y,,男,成大航太,21-22,5
+66,65,INFJ,n,n,y,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,n,exam,,女,成大職治系,19-20,5
+67,66,INFP,n,n,n,9. ~ 11.,reverse,day,y,n,outside,ok,y,y,無,女,大葉造型藝術系,21-22,2
+68,67,ESFJ,n,seldom,n,7. ~ 9.,2.a,week,rule,agree,n,ok,seldom,exam,,女,成大會計系,19-20,5
+69,68,INTJ,n,seldom,n,7. ~ 9.,2.a,month,rule,agree,n,ok,seldom,n,,女,成大職能治療系,21-22,3
+70,69,INTJ,n,seldom,want,9. ~ 11.,10.~ 00.,month,y,agree,n,ok,n,exam,,女,哥廷根大學生物系（原成大醫技系）,19-20,3
+71,70,ISTJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,agree,n,y,n,n,,女,成大職能治療系,19-20,5
+72,71,INTJ,n,n,want,7.b,10.~ 00.,month,y,agree,n,ok,seldom,y,有那種大半夜用平板打音樂遊戲一直敲螢幕很吵又戴耳機沉浸在自己世界不斷對外界施放噪音的人,男,成大化學工程系,19-20,2
+73,72,ENFJ,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,exam,無,男,成大化學,19-20,5
+74,73,ENTJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,y,n,y,n,n,,男,成大化學,19-20,4
+75,74,ESFJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,女,成大環境工程系,19-20,4
+76,75,ENTJ,n,seldom,y,7. ~ 9.,0.~ 2.,week,y,y,n,ok,n,y,,男,成大統計學系,21-22,4
+77,76,ISFJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,y,agree,n,y,seldom,exam,,女,成大化工系,19-20,5
+78,77,ENTJ,n,n,n,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,女,成大會計系,19-20,3
+79,78,ENFJ,n,seldom,y,7.b,2.a,month,y,agree,outside,ok,n,exam,,女,成大物理治療系,21-22,3
+80,79,ESFJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,outside,ok,seldom,exam,,女,成大經濟系,19-20,4
+81,80,ESFJ,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,agree,outside,ok,seldom,exam,,女,成大法律系,19-20,2
+82,81,INTJ,n,seldom,n,9. ~ 11.,2.a,month,y,agree,n,ok,seldom,y,沒有,男,成大統計學系,19-20,4
+83,82,ESFJ,n,seldom,y,7. ~ 9.,0.~ 2.,day,y,agree,n,ok,n,exam,,女,雲科大營建工程系,19-20,3
+84,83,ESFJ,n,seldom,n,9. ~ 11.,10.~ 00.,month,y,n,n,ok,y,y,,女,機械,21-22,5
+85,84,ISTJ,n,seldom,n,9. ~ 11.,0.~ 2.,month,y,absence,n,ok,n,exam,不倒垃圾,女,成大資源工程,19-20,4
+86,85,ENTJ,n,n,n,11.a,2.a,week,y,absence,n,ok,seldom,n,,女,成大外文,21-22,4
+87,86,ENFJ,n,seldom,y,9. ~ 11.,0.~ 2.,week,n,absence,n,ok,n,n,,女,成大資源工程系,21-22,4
+88,87,ISFJ,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,agree,n,ok,seldom,y,,女,成大會計,21-22,5
+89,88,ISFP,n,y,want,9. ~ 11.,reverse,month,rule,agree,n,ok,seldom,y,,男,光電111 ncku,19-20,3
+90,89,ESFJ,n,n,want,7. ~ 9.,10.~ 00.,month,y,agree,n,ok,seldom,y,,男,成大電機 ,19-20,3
+91,90,INFP,n,seldom,y,11.a,2.a,month,rule,absence,n,ok,n,exam,,女,成大化學系,19-20,3
+92,91,INTP,n,n,n,9. ~ 11.,0.~ 2.,month,rule,n,n,n,seldom,y,,女,台大電機系,21-22,3
+93,92,INTP,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,agree,n,ok,seldom,exam,,女,成大化學工程系,21-22,4
+94,93,INFP,n,seldom,want,7. ~ 9.,0.~ 2.,day,y,y,n,y,seldom,y,隨便碰別人的東西,女,成大化工系,19-20,4
+95,94,ESTP,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,absence,outside,ok,seldom,exam,,男,成大電機,21-22,3
+96,95,ISTJ,n,seldom,n,9. ~ 11.,2.a,month,rule,y,outside,ok,seldom,y,,男,成大資訊工程系,21-22,3
+97,96,ESFJ,n,n,n,9. ~ 11.,0.~ 2.,month,y,n,n,ok,seldom,y,不同的睡眠時間,女,成大法律系,21-22,4
+98,97,INTP,y,seldom,want,11.a,0.~ 2.,month,y,agree,outside,ok,n,exam,,男,成大機械工程所,21-22,1
+99,98,ENFJ,n,y,want,11.a,2.a,month,y,agree,outside,y,n,exam,,女,成大法律系,23-24,4
+100,99,ISTJ,y,seldom,want,7. ~ 9.,10.~ 00.,day,y,agree,outside,ok,n,y,,女,成大資訊工程系,21-22,5
+101,100,ENTP,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,n,,女,台大經濟,21-22,5
+102,101,INFP,n,seldom,y,11.a,0.~ 2.,month,y,agree,n,y,n,exam,,女,成大職能治療學系,23-24,5
+103,102,INTJ,n,n,n,7. ~ 9.,0.~ 2.,month,y,n,n,ok,y,y,,女,成大政治,21-22,4
+104,103,ENTJ,n,n,n,11.a,2.a,n,y,y,outside,ok,n,exam,愛放屁 說夢話,男,成大資訊工程系,21-22,2
+105,104,ENFP,n,n,want,11.a,0.~ 2.,month,rule,y,n,ok,seldom,exam,作息不同,女,成大藥學,21-22,4
+106,105,ENTJ,n,n,n,7. ~ 9.,0.~ 2.,week,y,agree,n,y,seldom,exam,室友衛生習慣,女,成大資訊工程系,19-20,4
+107,106,ISTJ,n,seldom,want,9. ~ 11.,2.a,month,y,n,outside,y,seldom,exam,,女,交大管理科學系,19-20,4
+108,107,ISFJ,n,seldom,want,11.a,0.~ 2.,week,rule,y,outside,ok,n,exam,,女,成大外文系,19-20,5
+109,108,INTP,n,seldom,want,11.a,2.a,month,y,agree,n,ok,seldom,exam,,女,成大資訊工程系,21-22,4
+110,109,INFP,n,n,n,11.a,2.a,week,y,agree,n,ok,n,exam,,女,成大工設系,21-22,4
+111,110,INTP,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,y,n,y,n,exam,,女,成大工設系,19-20,5
+112,111,INTP,n,seldom,y,7.b,0.~ 2.,week,y,agree,n,ok,y,exam,,女,成大統計學系,21-22,2
+113,112,ESFJ,n,seldom,y,9. ~ 11.,0.~ 2.,month,rule,agree,outside,ok,n,exam,,男,中國醫藥大學藥學系,21-22,5
+114,113,ENTJ,y,y,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,y,n,y,,女,交大管理科學系,21-22,4
+115,114,ESFJ,n,seldom,want,9. ~ 11.,10.~ 00.,month,y,y,n,ok,seldom,y,打呼,女,交大管理科學系,19-20,4
+116,115,ISTJ,y,y,want,11.a,2.a,week,y,agree,y,y,n,y,,男,交大土木,19-20,4
+117,116,ENFP,n,seldom,y,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,n,exam,,女,成大建築系,19-20,4
+118,117,ISTJ,n,n,n,7. ~ 9.,2.a,month,rule,agree,n,ok,seldom,exam,,男,成大台文系,21-22,3
+119,118,ESFJ,n,n,want,7.b,10.~ 00.,week,y,y,n,ok,seldom,y,,男,國防醫學系,21-22,5
+120,119,INTP,n,n,want,7.b,0.~ 2.,week,y,agree,n,ok,seldom,exam,,女,成大光電系,19-20,4
+121,120,ENFP,n,seldom,y,9. ~ 11.,0.~ 2.,n,y,agree,outside,y,n,exam,,女,交大管理科學系,19-20,5
+122,121,INFP,n,seldom,n,7.b,0.~ 2.,week,y,agree,n,ok,seldom,exam,吃完東西的垃圾有沒有馬上丟掉（其實跟保持環境整潔差不多XD,女,成大生物醫學工程系,23-24,5
+123,122,INFP,n,seldom,y,11.a,reverse,month,n,y,n,ok,seldom,n,,女,成大水利,23-24,5
+124,123,ISFJ,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,n,n,ok,y,y,,女,成大中國文學系,21-22,3
+125,124,ISTJ,n,seldom,want,9. ~ 11.,2.a,month,rule,agree,n,ok,n,y,,男,台大資訊工程學系,21-22,3
+126,125,ISTP,n,n,n,7. ~ 9.,10.~ 00.,week,y,agree,n,ok,y,exam,,女,成大不分系,19-20,4
+127,126,ENFP,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,agree,n,ok,seldom,exam,,女,成大心理系,19-20,4
+128,127,ISFJ,n,seldom,n,9. ~ 11.,2.a,week,rule,agree,n,ok,seldom,y,,女,成大醫技系,19-20,4
+129,128,INFJ,n,seldom,want,9. ~ 11.,0.~ 2.,day,y,y,outside,ok,n,exam,,女,中正化工,23-24,5
+130,129,ISFP,y,seldom,y,7. ~ 9.,0.~ 2.,month,y,absence,outside,n,y,exam,沒有,男,中正法律系,19-20,5
+131,130,ESTJ,n,seldom,n,9. ~ 11.,0.~ 2.,day,y,agree,n,y,seldom,exam,關心室友的程度、與人社交的心理狀態,女,成大資訊工程系,19-20,3
+132,131,ENFP,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,agree,n,ok,y,exam,開窗戶開門使用大燈,女,成資,21-22,4
+133,132,ENFJ,n,seldom,y,7. ~ 9.,10.~ 00.,month,rule,agree,n,ok,n,exam,,女,中正法律所,23-24,5
+134,133,ENTJ,n,seldom,y,7. ~ 9.,0.~ 2.,week,y,n,n,ok,y,exam,,男,成大航太工程學系,19-20,3
+135,134,ENFJ,n,seldom,n,9. ~ 11.,2.a,n,y,agree,n,y,n,exam,,女,成大資訊工程系,23-24,5
+136,135,INFJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,y,y,,女,成大醫學檢驗生物技術學系,19-20,4
+137,136,ENTJ,n,seldom,want,7. ~ 9.,10.~ 00.,n,rule,agree,n,ok,seldom,y,,女,成大醫技系,19-20,3
+138,137,ENFP,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,absence,n,ok,n,exam,,男,成大資訊工程系,21-22,4
+139,138,ENTP,n,seldom,n,9. ~ 11.,2.a,month,rule,absence,outside,ok,seldom,y,,男,中正物理,21-22,1
+140,139,ENFJ,n,seldom,want,9. ~ 11.,0.~ 2.,day,y,y,n,ok,seldom,exam,,男,成大醫技,19-20,4
+141,140,INTJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,y,agree,n,y,n,n,,男,成大資訊工程系,19-20,5
+142,141,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,n,rule,y,n,ok,seldom,y,鬧鐘不關,女,成大資訊工程學系,21-22,4
+143,142,INFP,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,y,n,exam,,女,成大機械,21-22,4
+144,143,ESFJ,n,y,n,11.a,reverse,month,rule,y,outside,ok,n,n,,男,成大資訊工程系,21-22,4
+145,144,ENTJ,n,seldom,n,7. ~ 9.,0.~ 2.,day,y,n,n,y,n,y,,女,東華國際企業學系,19-20,3
+146,145,INFP,n,seldom,want,11.a,reverse,month,rule,agree,outside,ok,seldom,n,,男,成大資訊工程系,21-22,5
+147,146,ISFJ,n,n,n,7. ~ 9.,0.~ 2.,week,y,agree,outside,y,n,n,,女,成大資訊工程系,21-22,4
+148,147,INTJ,n,seldom,want,9. ~ 11.,2.a,week,y,n,outside,ok,n,exam,,男,成大資訊工程系,21-22,4
+149,148,ENTJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,outside,y,n,n,,男,成大資訊工程系,21-22,5
+150,149,INFJ,n,seldom,want,9. ~ 11.,2.a,month,y,agree,outside,y,seldom,exam,,女,成大資訊工程系,21-22,4
+151,150,INTJ,n,seldom,want,7.b,0.~ 2.,week,y,agree,outside,ok,seldom,y,,女,北市大英教系,21-22,5
+152,151,ENFJ,n,seldom,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,n,exam,,女,北市大英語教學系,19-20,4
+153,152,INFP,y,seldom,want,9. ~ 11.,2.a,week,y,agree,outside,y,seldom,exam,,女,逢甲大學土地管理學系,21-22,5
+154,153,INFP,n,seldom,want,11.a,reverse,month,rule,y,outside,ok,n,exam,,男,成大化學工程系,21-22,4
+155,154,ISTP,n,seldom,y,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,exam,,女,成大電機工程系,21-22,4
+156,155,INTJ,n,seldom,want,7. ~ 9.,2.a,week,rule,y,outside,ok,n,n,,男,成大資訊工程系,21-22,4
+157,156,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,n,rule,agree,outside,ok,seldom,n,無,女,北市大英語教學系,21-22,5
+158,157,ISFJ,n,seldom,y,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,seldom,exam,,女,成大測量系,21-22,5
+159,158,INTJ,n,seldom,n,11.a,0.~ 2.,week,y,n,n,ok,n,exam,,女,成大資訊工程系,21-22,3
+160,159,ISFJ,n,seldom,want,7. ~ 9.,10.~ 00.,month,rule,absence,outside,ok,seldom,y,打呼、關門很用力 (但打呼好像不能控制就是了QAQ,女,成大土木,19-20,3
+161,160,ISTJ,n,seldom,want,7. ~ 9.,10.~ 00.,month,rule,agree,n,ok,seldom,exam,耐熱程度(什麼時候可以開冷氣、幾人在時可以開冷氣etc),女,成大資訊工程系,21-22,5
+162,161,ESTJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,y,希望可以叫我起床上課考試,男,成大資訊工程系,21-22,4
+163,162,ISFJ,n,seldom,want,9. ~ 11.,0.~ 2.,month,rule,n,outside,ok,seldom,exam,,男,成大資訊工程系,21-22,5
+164,163,INTP,n,seldom,n,7. ~ 9.,10.~ 00.,day,y,n,n,ok,y,exam,,女,東華教育系,21-22,4
+165,164,ISFJ,n,seldom,y,9. ~ 11.,0.~ 2.,week,y,absence,n,ok,seldom,exam,,女,臺大圖書資訊學系,21-22,4
+166,165,INFJ,n,seldom,want,9. ~ 11.,10.~ 00.,month,y,agree,n,ok,seldom,exam,,女,成大會計系,21-22,5
+167,166,INTJ,n,n,n,7. ~ 9.,10.~ 00.,week,y,agree,n,y,seldom,exam,,女,台大生命科學系,21-22,4
+168,167,ENTJ,n,n,want,11.a,2.a,month,n,y,outside,ok,n,exam,,女,北市大公共系,21-22,5
+169,168,ISTJ,n,seldom,want,7. ~ 9.,2.a,week,y,agree,n,ok,seldom,exam,,女,Ohio State University 室內設計,21-22,5
+170,169,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,week,y,agree,outside,y,seldom,exam,打呼,男,成大資訊工程系,19-20,4
+171,170,INFP,n,n,want,9. ~ 11.,0.~ 2.,day,y,agree,n,n,seldom,y,,女,台大工商管理企管組,21-22,5
+172,171,ISTJ,n,seldom,y,11.a,2.a,day,y,agree,outside,y,seldom,exam,不倒垃圾（尤其經期的廁所垃圾真的絕了,女,中正財法,21-22,3
+173,172,INTJ,n,n,y,7.b,0.~ 2.,week,y,n,n,ok,y,y,味道,女,台大工管,19-20,3
+174,173,ESTJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,y,y,exam,打呼,男,成大電機,19-20,5
+175,174,ISTJ,n,n,n,7. ~ 9.,0.~ 2.,week,y,n,n,n,seldom,exam,打呼,女,台大日文,21-22,5
+176,175,ISTJ,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,agree,n,ok,n,y,,男,成大資訊工程,21-22,3
+177,176,ISFJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,y,n,ok,y,exam,,女,成大歷史系,21-22,4
+178,177,ENFP,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,y,exam,目前沒有,女,中正法律系研究所二年級,23-24,3
+179,178,ESFP,n,seldom,want,9. ~ 11.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,男,成大航太系,19-20,4
+180,179,ISTJ,n,seldom,want,9. ~ 11.,10.~ 00.,month,y,agree,n,ok,seldom,y,鬧鐘設很早，但永遠聽不到，或是關掉繼續睡；開關門很大聲；有人在睡覺的時候依舊不會控制音量；食物吃完不馬上丟,女,台大法律系,19-20,5
+181,180,ENTJ,n,seldom,n,9. ~ 11.,2.a,week,y,agree,n,y,seldom,y,,女,中山海洋環境及工程學系,21-22,4
+182,181,ISFP,n,seldom,n,7. ~ 9.,0.~ 2.,week,rule,agree,outside,y,n,exam,,女,成大建築系,19-20,5
+183,182,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,absence,outside,y,seldom,exam,,女,交大應用化學系,21-22,2
+184,183,INFJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,outside,y,n,n,,男,成大資訊工程系,21-22,4
+185,184,ISTJ,n,seldom,y,11.a,2.a,month,y,y,n,y,n,exam,,女,成大資源系,19-20,5
+186,185,ESFJ,n,seldom,y,9. ~ 11.,0.~ 2.,month,y,agree,outside,ok,seldom,exam,,女,北市大公共系,21-22,5
+187,186,ISFJ,n,seldom,want,9. ~ 11.,2.a,week,rule,agree,n,ok,seldom,exam,,女,中正法律所,23-24,4
+188,187,ISTJ,n,seldom,want,11.a,reverse,month,y,agree,outside,ok,n,exam,不要偷吃醬,男,成大資訊工程系,21-22,5
+189,188,INTJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,absence,n,ok,seldom,exam,,男,成大光電與工程學系,21-22,3
+190,189,ISFP,n,y,want,9. ~ 11.,2.a,week,y,y,n,y,y,y,,男,成大資訊工程系,21-22,4
+191,190,INTJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,rule,agree,n,ok,n,exam,,男,成大資訊工程系,21-22,4
+192,191,ENTJ,n,seldom,want,7. ~ 9.,10.~ 00.,week,y,agree,n,y,n,n,,女,東海法律系,23-24,4
+193,192,ISTJ,n,n,want,7. ~ 9.,0.~ 2.,week,rule,absence,n,y,seldom,y,,女,成大資訊工程系,21-22,3
+194,193,ISTJ,n,n,want,7. ~ 9.,0.~ 2.,month,y,n,n,ok,seldom,y,手機鬧鐘一直響但不關有夠靠北,女,交大電子所/中正通訊系,23-24,5
+195,194,ISTJ,n,seldom,n,9. ~ 11.,10.~ 00.,month,y,agree,n,ok,seldom,y,鬧鐘設很早，但永遠聽不到，或是關掉繼續睡；開關門很大聲；有人在睡覺的時候依舊不會控制音量；食物吃完不馬上丟,女,台大法律系,19-20,5
+196,195,INFP,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,outside,ok,seldom,exam,你們可以考慮問一下能不能接受室友偷尻尻,男,成大資訊工程,21-22,4
+197,196,ESFP,n,n,y,7. ~ 9.,0.~ 2.,month,rule,n,n,y,seldom,exam,,女,成大電機系,19-20,4
+198,197,ESFJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,absence,n,ok,y,exam,,女,清華大學教育與學習科技學系,21-22,3
+199,198,ENTJ,n,seldom,n,9. ~ 11.,0.~ 2.,month,y,n,outside,ok,n,y,,女,長庚大學護理系,19-20,3
+200,199,INTJ,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,n,n,y,seldom,exam,洗澡時間,女,長庚護理,21-22,5
+201,200,INTJ,n,seldom,want,7. ~ 9.,0.~ 2.,week,y,y,outside,ok,n,y,否,男,成大資訊工程系,19-20,3
+202,201,INFP,n,seldom,n,7. ~ 9.,0.~ 2.,week,rule,n,n,ok,y,exam,,女,臺北市立大學英語教學系,21-22,4
+203,202,INFP,n,seldom,n,7. ~ 9.,0.~ 2.,week,rule,n,n,ok,y,exam,,女,臺北市立大學英語教學系,21-22,4
+204,203,ISFJ,n,seldom,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,n,exam,,女,東吳企業管理系,19-20,5
+205,204,ISTP,n,seldom,want,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,女,成大資訊工程系,21-22,5
+206,205,ISTP,n,seldom,want,7. ~ 9.,0.~ 2.,month,y,absence,outside,ok,seldom,n,,男,成大生技系,19-20,4
+207,206,ENFJ,n,n,n,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,seldom,y,,女,中原工業,21-22,4
+208,207,ISFJ,n,y,y,11.a,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,女,中原工業系,21-22,5
+209,208,ISFJ,n,n,n,9. ~ 11.,0.~ 2.,month,y,agree,n,ok,seldom,exam,,女,長庚大學護理系,19-20,4
+210,209,ENFP,n,seldom,y,7. ~ 9.,0.~ 2.,month,y,agree,n,ok,y,y,,女,成大資訊工程系,19-20,3
+211,210,ENFJ,n,seldom,n,9. ~ 11.,0.~ 2.,week,y,agree,outside,ok,seldom,exam,,女,中原大學會計系,21-22,5
+212,211,ISTP,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,absence,outside,y,n,exam,睡覺打呼,男,成大資訊系,21-22,4
+213,212,INTP,n,seldom,n,7. ~ 9.,0.~ 2.,week,y,absence,n,ok,seldom,exam,,男,成大光電系,21-22,5
+214,213,ENTP,n,n,n,7. ~ 9.,0.~ 2.,month,rule,agree,n,ok,seldom,exam,,女,成大資訊工程系,21-22,5
+215,214,ESFJ,n,seldom,want,11.a,0.~ 2.,month,y,agree,outside,ok,n,exam,無,女,成大資訊工程系,21-22,5
+216,215,ENTP,n,seldom,want,7. ~ 9.,2.a,month,rule,y,outside,y,seldom,exam,洗澡頻率，垃圾清潔頻率,男,台東大學綠資,23-24,5
+217,216,ESTJ,n,seldom,n,7. ~ 9.,0.~ 2.,month,y,agree,n,y,n,exam,,女,成大資訊工程系,19-20,4
+218,217,ESTJ,n,n,want,7. ~ 9.,10.~ 00.,week,y,agree,n,ok,seldom,exam,,女,成大政治,21-22,5
+219,218,ESFJ,n,seldom,want,9. ~ 11.,0.~ 2.,month,y,agree,n,y,seldom,exam,個人衛生習慣（位置的整潔度、外食垃圾會不會放過夜）,男,成大資訊工程學系,21-22,4
+>>>>>>> refs/remotes/origin/master

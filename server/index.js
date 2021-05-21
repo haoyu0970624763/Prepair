@@ -2,7 +2,10 @@ const routerApi = require('./router');
 const bodyParser = require('body-parser'); 
 const express = require('express');
 const app = express();
+
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 // 後端api路由
 app.use('/api', routerApi);
