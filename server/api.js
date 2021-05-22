@@ -14,476 +14,539 @@ const pool = mysql.createPool({
 });
 
 var abi = [
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_lease",
-                "type": "uint256"
-            },
-            {
-                "name": "_totalRent",
-                "type": "uint256"
-            },
-            {
-                "name": "_tenantNum",
-                "type": "uint256"
-            },
-            {
-                "name": "_landlord",
-                "type": "address"
-            }
-        ],
-        "name": "addHouse",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_addr",
-                "type": "address"
-            },
-            {
-                "name": "_rent",
-                "type": "uint256"
-            },
-            {
-                "name": "_lease",
-                "type": "uint256"
-            },
-            {
-                "name": "_houseNumber",
-                "type": "uint256"
-            },
-            {
-                "name": "_landlord",
-                "type": "address"
-            }
-        ],
-        "name": "addTenant",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [],
-        "name": "getContractMoney",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [],
-        "name": "powerToContract",
-        "outputs": [],
-        "payable": true,
-        "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_houseNumber",
-                "type": "uint256"
-            },
-            {
-                "name": "_powerCost",
-                "type": "uint256"
-            }
-        ],
-        "name": "PowerToLandlord",
-        "outputs": [],
-        "payable": true,
-        "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [],
-        "name": "rentToContract",
-        "outputs": [],
-        "payable": true,
-        "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_houseNumber",
-                "type": "uint256"
-            }
-        ],
-        "name": "RentToLandlord",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_powerCost",
-                "type": "uint256"
-            },
-            {
-                "name": "_addr",
-                "type": "address"
-            }
-        ],
-        "name": "setTenantPowerCost",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "payable": true,
-        "stateMutability": "payable",
-        "type": "fallback"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": false,
-                "name": "tenantAddr",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "name": "rent",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "name": "lease",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "name": "houseNumber",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "name": "landlordaddr",
-                "type": "address"
-            }
-        ],
-        "name": "gettenant",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": false,
-                "name": "howmuch",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "name": "whoPaidMoney",
-                "type": "address"
-            }
-        ],
-        "name": "getcontractMoneybyRent",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": false,
-                "name": "powercost",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "name": "tenant",
-                "type": "address"
-            }
-        ],
-        "name": "getTenantPowerCost",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": false,
-                "name": "howmuch",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "name": "whoPaidMoney",
-                "type": "address"
-            }
-        ],
-        "name": "getcontractMoneybyPower",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": false,
-                "name": "howmuch",
-                "type": "uint256"
-            }
-        ],
-        "name": "contractMoney",
-        "type": "event"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_houseNumber",
-                "type": "uint256"
-            }
-        ],
-        "name": "checkIfTenantsHadPaidPower",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_houseNumber",
-                "type": "uint256"
-            }
-        ],
-        "name": "checkIfTenantsHadPaidRent",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_addr",
-                "type": "address"
-            },
-            {
-                "name": "count",
-                "type": "uint256"
-            }
-        ],
-        "name": "getLandlordHousebyAddr",
-        "outputs": [
-            {
-                "name": "",
-                "type": "address"
-            },
-            {
-                "name": "",
-                "type": "uint256"
-            },
-            {
-                "name": "",
-                "type": "uint256"
-            },
-            {
-                "name": "",
-                "type": "uint256"
-            },
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_addr",
-                "type": "address"
-            }
-        ],
-        "name": "getLandlordHouseNum",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_addr",
-                "type": "address"
-            }
-        ],
-        "name": "getTenant",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            },
-            {
-                "name": "",
-                "type": "uint256"
-            },
-            {
-                "name": "",
-                "type": "bool"
-            },
-            {
-                "name": "",
-                "type": "bool"
-            },
-            {
-                "name": "",
-                "type": "address"
-            },
-            {
-                "name": "",
-                "type": "uint256"
-            },
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_addr",
-                "type": "address"
-            }
-        ],
-        "name": "ifTenantHasPaidPowerCost",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_addr",
-                "type": "address"
-            }
-        ],
-        "name": "ifTenantHasPaidRent",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "tenants",
-        "outputs": [
-            {
-                "name": "addr",
-                "type": "address"
-            },
-            {
-                "name": "rent",
-                "type": "uint256"
-            },
-            {
-                "name": "lease",
-                "type": "uint256"
-            },
-            {
-                "name": "hadPaidRent",
-                "type": "bool"
-            },
-            {
-                "name": "hadPaidPower",
-                "type": "bool"
-            },
-            {
-                "name": "landlordAddr",
-                "type": "address"
-            },
-            {
-                "name": "Hid",
-                "type": "uint256"
-            },
-            {
-                "name": "id",
-                "type": "uint256"
-            },
-            {
-                "name": "powerCost",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    }
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_lease",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_totalRent",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tenantNum",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address payable",
+				"name": "_landlord",
+				"type": "address"
+			}
+		],
+		"name": "addHouse",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_rent",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_lease",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_houseNumber",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_landlord",
+				"type": "address"
+			}
+		],
+		"name": "addTenant",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "howmuch",
+				"type": "uint256"
+			}
+		],
+		"name": "contractMoney",
+		"type": "event"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "getContractMoney",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "powercost",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "tenant",
+				"type": "address"
+			}
+		],
+		"name": "getTenantPowerCost",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "howmuch",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "whoPaidMoney",
+				"type": "address"
+			}
+		],
+		"name": "getcontractMoneybyPower",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "howmuch",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "whoPaidMoney",
+				"type": "address"
+			}
+		],
+		"name": "getcontractMoneybyRent",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "tenantAddr",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "rent",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "lease",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "houseNumber",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "landlordaddr",
+				"type": "address"
+			}
+		],
+		"name": "gettenant",
+		"type": "event"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "powerToContract",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_houseNumber",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_powerCost",
+				"type": "uint256"
+			}
+		],
+		"name": "PowerToLandlord",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "rentToContract",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_houseNumber",
+				"type": "uint256"
+			}
+		],
+		"name": "RentToLandlord",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_powerCost",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "setTenantPowerCost",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "fallback"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_houseNumber",
+				"type": "uint256"
+			}
+		],
+		"name": "checkIfTenantsHadPaidPower",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_houseNumber",
+				"type": "uint256"
+			}
+		],
+		"name": "checkIfTenantsHadPaidRent",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "count",
+				"type": "uint256"
+			}
+		],
+		"name": "getLandlordHousebyAddr",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "getLandlordHouseNum",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "getTenant",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "ifTenantHasPaidPowerCost",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "ifTenantHasPaidRent",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tenants",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "rent",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "lease",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "hadPaidRent",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "hadPaidPower",
+				"type": "bool"
+			},
+			{
+				"internalType": "address",
+				"name": "landlordAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "Hid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "powerCost",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
 ];
 
-var address = '0xb8Ee08F0B470fc84f05E5BA8d622A8F0b681A1d8'
+var address='0x02B98323cD03A71E7b20cbD7aF1f397601220054'
 var MyContract = new web3.eth.Contract(abi, address);
+
 
 // set UTF8
 pool.getConnection((err, connection) => {
@@ -496,8 +559,8 @@ pool.getConnection((err, connection) => {
     });
     connection.query(sql2, function (err, result) {
         if (err) throw err;
+        connection.release()
     });
-    connection.release();
 })
 
 pool.getConnection((err, connection) => {
@@ -519,13 +582,14 @@ pool.getConnection((err, connection) => {
         }
     });
 
-
+    
     var sql5 = "SHOW TABLES LIKE 'HOUSE'"
-    var sql6 = "CREATE TABLE HOUSE ( pattern VARCHAR(20),space VARCHAR(20), City VARCHAR(20), Township VARCHAR(20), roomType VARCHAR(20), address VARCHAR(30), cost VARCHAR(20), detailedCost VARCHAR(20), owner VARCHAR(20) , pic VARCHAR(50), moneyAddress VARCHAR(50))";
-    var sql7 = "insert into HOUSE ( pattern , space , City , Township , roomType , address , cost, detailedCost,owner,pic,moneyAddress) values(?,?,?,?,?,?,?,?,?,?,?)";
+    var sql6 = "CREATE TABLE HOUSE (id VARCHAR(20), pattern VARCHAR(20),space VARCHAR(20), City VARCHAR(20), Township VARCHAR(20), roomType VARCHAR(20), address VARCHAR(30), cost VARCHAR(20), detailedCost VARCHAR(20), owner VARCHAR(20) , pic VARCHAR(50), moneyAddress VARCHAR(50) , rented VARCHAR(50))";
+    var sql7 = "insert into HOUSE ( id ,pattern , space , City , Township , roomType , address , cost, detailedCost,owner,pic,moneyAddress,rented) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
     var house = [
         {
+            id: '1',
             pattern: "2房2廳2衛1陽台",
             space: "28坪",
             City: "台南市",
@@ -536,9 +600,10 @@ pool.getConnection((err, connection) => {
             detailedCost: "21500",
             owner: "陳先生",
             pic: "147444177635281205_765x517.water3.jpg",
-            moneyAddress: ''
+            moneyAddress: '0x679788336d8a4fc401e1b71e8c93fc524e408357'
         },
         {
+            id: '2',
             pattern: "3房2廳2衛1陽台",
             space: "37坪",
             City: "台南市",
@@ -549,9 +614,10 @@ pool.getConnection((err, connection) => {
             detailedCost: "18,800",
             owner: "郭先生",
             pic: "152109057443999704_765x517.water3.jpg",
-            moneyAddress: ''
+            moneyAddress: '0x679788336d8a4fc401e1b71e8c93fc524e408357'
         },
         {
+            id: '3',
             pattern: "2房1廳1衛1陽台",
             space: "25坪",
             City: "台南市",
@@ -562,9 +628,10 @@ pool.getConnection((err, connection) => {
             detailedCost: "12000",
             owner: "蔡小姐",
             pic: "162054677374849401_765x517.water3.jpg",
-            moneyAddress: ''
+            moneyAddress: '0x679788336d8a4fc401e1b71e8c93fc524e408357'
         },
         {
+            id: '4',
             pattern: "4房2廳2衛2陽台",
             space: "33坪",
             City: "台南市",
@@ -575,9 +642,10 @@ pool.getConnection((err, connection) => {
             detailedCost: "15,000",
             owner: "邱小姐",
             pic: "162015028546399504_765x517.water3.jpg",
-            moneyAddress: ''
+            moneyAddress: '0x679788336d8a4fc401e1b71e8c93fc524e408357'
         },
         {
+            id: '5',
             pattern: "3房0廳1衛1陽台",
             space: "22坪",
             City: "台南市",
@@ -588,26 +656,29 @@ pool.getConnection((err, connection) => {
             detailedCost: "15,000",
             owner: "林先生",
             pic: "157493877931891204_765x517.water3.jpg",
-            moneyAddress: ''
+            moneyAddress: '0x679788336d8a4fc401e1b71e8c93fc524e408357'
         }
     ]
     connection.query(sql5, function (err, result) {
         if (err) throw err;
         if (result.length == 0) {
             connection.query(sql6, (err, result) => {
+                if (err) throw err
                 console.log("table of HOUSE created")
             })
+
             for (i = 0; i <= 4; i++) {
-                connection.query(sql7, [house[i].pattern, house[i].space, house[i].City, house[i].Township, house[i].roomType, house[i].address, house[i].cost, house[i].detailedCost, house[i].owner, house[i].pic, house[i].moneyAddress], (err, result) => {
+                connection.query(sql7, [house[i].id, house[i].pattern, house[i].space, house[i].City, house[i].Township, house[i].roomType, house[i].address, house[i].cost, house[i].detailedCost, house[i].owner, house[i].pic, house[i].moneyAddress,'no'], (err, result) => {
                     console.log("add house")
                 })
             }
+            connection.release()
         }
         else {
             console.log("table of HOUSE exists")
+            connection.release()
         }
     });
-    connection.release();
 })
 
 module.exports = {
@@ -630,24 +701,25 @@ module.exports = {
                         res.send("success")
                     }
                 }
-                connection.release();
             })
+            connection.release();
         })
     },
     register(req, res, next) {
-        var password = "useless";
+
+        var password = "password";
         web3.eth.personal.newAccount(password).then(function (addr) {
             console.log('新增賬戶:', addr);
             var id = req.body.id;
             var password = req.body.password;
             pool.getConnection((err, connection) => {
                 var sql = 'insert into USER(id, password,personality ,smoke , drink , pet , wake , sleep , clean , bath , back , s_custom,m_smoke , m_drink , m_back , m_noise , clock ,sleep_reason, address) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
-                connection.query(sql, [id, password, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', addr], (err, result) => {
+                connection.query(sql, [id, password, 'INFJ', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', addr], (err, result) => {
                     if (err) throw err
                     console.log("register success")
                 })
                 res.send(addr);
-                connection.release()
+                connection.release();
             })
         });
     },
@@ -673,15 +745,17 @@ module.exports = {
         pool.getConnection((err, connection) => {
 
             if (err) throw err;
-        
+
             var sql2 = "UPDATE USER SET smoke=?, drink=? , pet=? , wake=? , sleep=? ,clean=? ,bath=?,back=?,s_custom=?,m_smoke=?,m_drink=?,m_back=?,m_noise=?,clock=?,sleep_reason=?  where id=?";
 
-            connection.query(sql2, [smoke,drink,pet,wake,sleep,clean,bath,back,s_custom,m_smoke,m_drink,m_back,m_noise,clock,sleep_reason,id], (err, result) => {
+            connection.query(sql2, [smoke, drink, pet, wake, sleep, clean, bath, back, s_custom, m_smoke, m_drink, m_back, m_noise, clock, sleep_reason, id], (err, result) => {
                 if (err) throw err;
                 console.log("changing date in USER is success")
+                res.send("OK");
+                connection.release()
             })
         })
-        res.send("OK");
+        
     },
     loadHouse(req, res, next) {
 
@@ -693,20 +767,20 @@ module.exports = {
         pool.getConnection((err, connection) => {
 
             if (err) throw err;
-            var sql = "select * from house where City=? and Township=? and roomType=? and cost=?"
+            var sql = "select * from HOUSE where City=? and Township=? and roomType=? and cost=?"
 
             connection.query(sql, [city, township, roomtype, cost], function (err, result) {
                 if (err) throw err;
                 if (result.length != 0) {
                     res.send(result)
                 }
+                connection.release()
             });
         })
     },
     getUser(req, res, next) {
 
         var id = req.body.id;
-
         pool.getConnection((err, connection) => {
             if (err) throw err;
             var sql = "select * from USER where id=?"
@@ -715,8 +789,65 @@ module.exports = {
                 if (err) throw err;
                 if (result.length != 0) {
                     res.json(result)
+                    connection.release()
                 }
             });
         })
-    }
+    },
+    GetBalance(req, res, next) {
+
+        var address = req.body.address;
+        web3.eth.getBalance(address).then(function(balance){
+            const etherValue = web3.utils.fromWei(balance, 'ether');
+            res.send(etherValue);
+        })
+    },
+    CheckRent(req, res, next) {
+
+        var id = req.body.id;
+        pool.getConnection((err, connection) => {
+            if (err) throw err;
+            var sql = "select * from BOOLRENT where id=?"
+
+            connection.query(sql, [id], function (err, result) {
+                if (err) throw err;
+                if (result[0].rent == 'no') {
+                    res.send('no')
+                }
+                else {
+                    res.send('yes')
+                }
+            });
+
+        })
+    },
+    GiveMoney(req, res, next) {
+
+        var address_from = req.body.address;
+        var address_to = '0xd5f881f474b8648fa935719b1de77c488a1d0541'
+        var trans_value = 100000000000000000;
+        var password = 'useless';
+
+        web3.eth.personal.unlockAccount(address_from, password, 9999, function () {
+            console.log('unlock accounts ok')
+            web3.eth.sendTransaction({
+                from: address_from,
+                to: address_to,
+                value: trans_value,
+                //value: web3.utils.toWei(trans_value,"ether"),
+            }, function (err, transactionHash) {
+                if (!err) {
+                    console.log('need mined')
+                    console.log('transactionHash:', transactionHash)
+                    res.send({ msg: "ok", hash: transactionHash });
+                } else {
+                    console.log('-------------error-----------')
+                    console.log(err)
+                    console.log('-------------error-----------')
+                }
+            })
+        });
+
+    },
+
 }

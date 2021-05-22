@@ -90,7 +90,7 @@
             <select class="custom-select" v-model="city" @change="clickCity">
               <option
                 v-for="cities in Country"
-                v-bind:key="cities"
+                v-bind:key="cities.city"
                 v-if="cities.region === region"
                 :value="cities.city"
               >
@@ -102,7 +102,7 @@
             <select class="custom-select" v-model="township" @change="zeroCost">
               <option
                 v-for="townships in District"
-                v-bind:key="townships"
+                v-bind:key="townships.township"
                 v-if="townships.city === city"
                 :value="townships.township"
               >
@@ -322,7 +322,7 @@ export default {
       ],
     };
   },
-  created() {
+   created() {
     this.$http
       .post("/api/loadHouse", {
         city: this.city,
@@ -381,22 +381,10 @@ export default {
       this.$router.push("/LivingHabit");
     },
     profile (){
-      this.$router.push("/profile")
+      this.$router.push("/Profile")
     },
     GoToHouse() {
       this.$router.push("/Homepage");
-    },
-    loadHouse() {
-      this.$http
-        .post("/api/loadHouse", {
-          city: this.city,
-          township: this.township,
-          roomtype: this.roomtype,
-          cost: this.cost,
-        })
-        .then((res) => {
-          this.houses = res.body;
-        });
     },
     searchRoommate() {
       this.$store.commit("personality", this.userInfo[0].personality);
@@ -416,9 +404,8 @@ export default {
       this.$store.commit("clock", this.userInfo[0].clock);
       this.$store.commit("sleep_reason", this.userInfo[0].sleep_reason);
       this.$store.commit("addr", this.userInfo[0].address);
-      const path = "http://localhost:5000/recommend";
       this.$http
-        .post(path, {
+        .post('pythonApi/recommend', {
           id: this.user,
           personality: this.userInfo[0].personality,
           smoke: this.userInfo[0].smoke,
@@ -444,9 +431,9 @@ export default {
           this.$store.commit("recommend3", this.recommend[2]);
           this.$store.commit("recommend4", this.recommend[3]);
           this.$store.commit("recommend5", this.recommend[4]);
-          
+          this.$router.push("/Roommate");
         });
-        this.$router.push("/Roommate");
+        
     },
   },
 };

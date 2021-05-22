@@ -45,6 +45,9 @@
                 <a class="dropdown-item" href="" @click="writeHabit"
                   >填寫使用者資料與習慣</a
                 >
+                <a class="dropdown-item" href="" @click="profile"
+                  >查看個人檔案</a
+                >
                 <a class="dropdown-item" href="" @click="logout">登出</a>
               </div>
             </div>
@@ -115,6 +118,9 @@ export default {
     },
     writeHabit() {
       this.$router.push("/LivingHabit");
+    },
+    profile (){
+      this.$router.push("/Profile")
     },
     GoToHouse() {
       this.$router.push("/Homepage");

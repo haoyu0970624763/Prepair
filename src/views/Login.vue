@@ -135,8 +135,6 @@ export default {
       if (this.isDisabled) {
         return false;
       }
-      
-
       this.$http
         .post("/api/login", {
           id: this.formLogin.userName,

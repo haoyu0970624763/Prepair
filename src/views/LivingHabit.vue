@@ -21,13 +21,13 @@
         <div class="collapse navbar-collapse" id="foldNavigation">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="javascript:;">去看房</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="javascript:;">找室友</a>
+              <a class="nav-link" @click.stop="GoToHouse">去看房</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="javascript:;">合約go</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;">檢舉</a>
             </li>
             <li class="nav-item">
               <div class="dropleft">
@@ -45,7 +45,10 @@
                   <a class="dropdown-item" @click="writeHabit"
                     >填寫使用者資料與習慣</a
                   >
-                  <a class="dropdown-item"  @click="logout">登出</a>
+                  <a class="dropdown-item" href="" @click="profile"
+                    >查看個人檔案</a
+                  >
+                  <a class="dropdown-item" @click="logout">登出</a>
                 </div>
               </div>
             </li>
@@ -130,9 +133,7 @@
             <option value="5">
               是， 1.光 2.打呼、 磨牙 3.他人說話聲、說夢話
             </option>
-            <option value="6">
-              不是， 以上因素都不會影響我睡眠
-            </option>
+            <option value="6">不是， 以上因素都不會影響我睡眠</option>
           </select>
           <p>
             4. 您的睡眠是否容易受到下列因素影響? 如果是，請選出影響您睡眠的排序
@@ -245,32 +246,47 @@ export default {
       AcceptDriking: "",
       AcceptComing: "",
       AcceptNoise: "",
-      AcceptSmoking:"",
+      AcceptSmoking: "",
     };
   },
   methods: {
     logout() {
-      this.$router.push({ path: "/" });
+      this.$router.push("/");
+    },
+    writeHabit() {
+      this.$router.push("/LivingHabit");
+    },
+    profile (){
+      this.$router.push("/Profile")
+    },
+    GoToHouse() {
+      this.$router.push("/Homepage");
     },
     trans() {
-      this.$http.post("/api/sendHabit", {
-        id:this.name,
-        smoke: this.isSmoking,
-        drink: this.isDrinking,
-        pet: this.Pet,
-        wake:this.WakeUpTime,
-        sleep:this.SleepTime,
-        clean:this.CleanFZ,
-        bath:this.CleanHabit,
-        back:this.isComing,
-        s_custom:this.SleepBadHabit,
-        m_smoke:this.AcceptSmoking,
-        m_drink:this.AcceptDriking,
-        m_back:this.AcceptComing,
-        m_noise:this.AcceptNoise,
-        clock:this.AlarmClock,
-        sleep_reason:this.SleepRanking   
-      });
+      this.$http
+        .post("/api/sendHabit", {
+          id: this.name,
+          smoke: this.isSmoking,
+          drink: this.isDrinking,
+          pet: this.Pet,
+          wake: this.WakeUpTime,
+          sleep: this.SleepTime,
+          clean: this.CleanFZ,
+          bath: this.CleanHabit,
+          back: this.isComing,
+          s_custom: this.SleepBadHabit,
+          m_smoke: this.AcceptSmoking,
+          m_drink: this.AcceptDriking,
+          m_back: this.AcceptComing,
+          m_noise: this.AcceptNoise,
+          clock: this.AlarmClock,
+          sleep_reason: this.SleepRanking,
+        })
+        .then((res) => {
+          if(res.body=='OK'){
+            this.$router.push("/Homepage");
+          }
+        });
     },
   },
 };
