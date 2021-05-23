@@ -61,7 +61,8 @@
           <p>錢包餘額</p>
           <p>:</p>
           <p>{{ this.balance }}</p>
-          <p>GWEI</p>
+          <p>coin</p>
+          <p>1 coin = 1000台幣</p>
         </div>
         <div class="ProfileText" v-if="this.rent == 'yes'">
           <p>租屋情況</p>
@@ -73,10 +74,10 @@
           <p>:</p>
           <p>尚未租房</p>
         </div>
-        <div class="ProfileText" v-if="this.rent == 'yes'">
+        <div class="ProfileText" v-if="this.rent = 'yes'">
           <p>租屋房東</p>
           <p>:</p>
-          <p>彭先生</p>
+          <p>{{houseInfo[0].owner}}</p>
         </div>
 
         <div class="ProfileText" v-if="this.rent == 'yes'">
@@ -107,6 +108,7 @@ export default {
       address: this.$store.state.address,
       balance: "",
       rent: "",
+      houseInfo:'',
       givemoney: "尚未繳交",
     };
   },
@@ -124,7 +126,14 @@ export default {
         id: this.user,
       })
       .then((res) => {
-        this.rent = res.body;
+        if(res.body=='no'){
+          this.rent='no'
+        }
+        else{
+          this.rent='yes'
+          this.houseInfo = res.body;
+        }
+        
       });
   },
   methods: {

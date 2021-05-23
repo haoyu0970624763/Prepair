@@ -31,6 +31,8 @@ export default new Vuex.Store({
     recommend3:'',
     recommend4:'',
     recommend5:'',
+    houseID:'1',
+    rentNumber:'',
   },
 
   mutations: {
@@ -108,7 +110,9 @@ export default new Vuex.Store({
     recommend5(state,variable) {
       state.recommend5 = variable;
     },
-
+    rentNumber(state,rentNumber) {
+      state.rentNumber = rentNumber;
+    },
     // 清除用户信息
     clearUserInfo(state) {
       state.userName = ''

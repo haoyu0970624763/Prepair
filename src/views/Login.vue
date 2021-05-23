@@ -159,7 +159,7 @@ export default {
         .then((res) => {
           this.address = res.body;
           this.$store.commit("addr", this.address);
-          this.$router.push("/Homepage");
+          window.location.href='http://127.0.0.1:5500/index.html'
         });
 
       this.$store.commit("name", this.formRegister.userName);

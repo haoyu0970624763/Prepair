@@ -193,7 +193,7 @@ export default {
     return {
       user: this.$store.state.userName,
       houseID: this.$store.state.houseID,
-      
+      personality: "",
       region: "南部",
       city: "台南市",
       township: "東區",
@@ -326,6 +326,21 @@ export default {
     };
   },
   created() {
+    var url = location.href;
+    if (url.indexOf("?") != -1) {
+      var arr = url.split("?");
+      this.personality = arr[1];
+
+      this.$http
+        .post("/api/sendPersonality", {
+          userID: this.user,
+          personality: this.personality,
+        })
+        .then((res) => {
+          this.$store.commit("personality", this.personality);
+        });
+    }
+
     this.$http
       .post("/api/loadHouse", {
         city: this.city,
@@ -335,31 +350,6 @@ export default {
       })
       .then((res) => {
         this.houses = res.body;
-      });
-
-    this.$http
-      .post("/api/getUser", {
-        id: this.user,
-      })
-      .then((res) => {
-        this.userInfo = res.body;
-        this.$store.commit("personality", this.userInfo[0].personality);
-        this.$store.commit("smoke", this.userInfo[0].smoke);
-        this.$store.commit("drink", this.userInfo[0].drink);
-        this.$store.commit("pet", this.userInfo[0].pet);
-        this.$store.commit("wake", this.userInfo[0].wake);
-        this.$store.commit("sleep", this.userInfo[0].sleep);
-        this.$store.commit("clean", this.userInfo[0].clean);
-        this.$store.commit("bath", this.userInfo[0].bath);
-        this.$store.commit("back", this.userInfo[0].back);
-        this.$store.commit("m_smoke", this.userInfo[0].m_smoke);
-        this.$store.commit("m_drink", this.userInfo[0].m_drink);
-        this.$store.commit("m_back", this.userInfo[0].m_back);
-        this.$store.commit("m_noice", this.userInfo[0].m_noice);
-        this.$store.commit("s_custom", this.userInfo[0].s_custom);
-        this.$store.commit("clock", this.userInfo[0].clock);
-        this.$store.commit("sleep_reason", this.userInfo[0].sleep_reason);
-        this.$store.commit("addr", this.userInfo[0].address);
       });
   },
   methods: {
@@ -389,27 +379,63 @@ export default {
     GoToHouse() {
       this.$router.push("/Homepage");
     },
-    GoToReport(){
+    GoToReport() {
       this.$router.push("/Report");
     },
     searchRoommate() {
-      this.$store.commit("personality", this.userInfo[0].personality);
-      this.$store.commit("smoke", this.userInfo[0].smoke);
-      this.$store.commit("drink", this.userInfo[0].drink);
-      this.$store.commit("pet", this.userInfo[0].pet);
-      this.$store.commit("wake", this.userInfo[0].wake);
-      this.$store.commit("sleep", this.userInfo[0].sleep);
-      this.$store.commit("clean", this.userInfo[0].clean);
-      this.$store.commit("bath", this.userInfo[0].bath);
-      this.$store.commit("back", this.userInfo[0].back);
-      this.$store.commit("m_smoke", this.userInfo[0].m_smoke);
-      this.$store.commit("m_drink", this.userInfo[0].m_drink);
-      this.$store.commit("m_back", this.userInfo[0].m_back);
-      this.$store.commit("m_noice", this.userInfo[0].m_noice);
-      this.$store.commit("s_custom", this.userInfo[0].s_custom);
-      this.$store.commit("clock", this.userInfo[0].clock);
-      this.$store.commit("sleep_reason", this.userInfo[0].sleep_reason);
-      this.$store.commit("addr", this.userInfo[0].address);
+      this.$http
+        .post("/api/getUser", {
+          id: this.user,
+        })
+        .then((res) => {
+          this.userInfo = res.body;
+          this.$store.commit("smoke", this.userInfo[0].smoke);
+          this.$store.commit("drink", this.userInfo[0].drink);
+          this.$store.commit("pet", this.userInfo[0].pet);
+          this.$store.commit("wake", this.userInfo[0].wake);
+          this.$store.commit("sleep", this.userInfo[0].sleep);
+          this.$store.commit("clean", this.userInfo[0].clean);
+          this.$store.commit("bath", this.userInfo[0].bath);
+          this.$store.commit("back", this.userInfo[0].back);
+          this.$store.commit("m_smoke", this.userInfo[0].m_smoke);
+          this.$store.commit("m_drink", this.userInfo[0].m_drink);
+          this.$store.commit("m_back", this.userInfo[0].m_back);
+          this.$store.commit("m_noice", this.userInfo[0].m_noice);
+          this.$store.commit("s_custom", this.userInfo[0].s_custom);
+          this.$store.commit("clock", this.userInfo[0].clock);
+          this.$store.commit("sleep_reason", this.userInfo[0].sleep_reason);
+          this.$store.commit("addr", this.userInfo[0].address);
+
+          this.$http
+            .post("pythonApi/recommend", {
+              id: this.user,
+              personality: this.userInfo[0].personality,
+              smoke: this.userInfo[0].smoke,
+              drink: this.userInfo[0].drink,
+              pet: this.userInfo[0].pet,
+              wake: this.userInfo[0].wake,
+              sleep: this.userInfo[0].sleep,
+              clean: this.userInfo[0].clean,
+              bath: this.userInfo[0].bath,
+              back: this.userInfo[0].back,
+              m_smoke: this.userInfo[0].m_smoke,
+              m_drink: this.userInfo[0].m_drink,
+              m_back: this.userInfo[0].m_back,
+              m_noice: this.userInfo[0].m_noice,
+              s_custom: this.userInfo[0].s_custom,
+              clock: this.userInfo[0].clock,
+              sleep_reason: this.userInfo[0].sleep_reason,
+            })
+            .then((res) => {
+              this.recommend = res.data;
+              this.$store.commit("recommend1", this.recommend[0]);
+              this.$store.commit("recommend2", this.recommend[1]);
+              this.$store.commit("recommend3", this.recommend[2]);
+              this.$store.commit("recommend4", this.recommend[3]);
+              this.$store.commit("recommend5", this.recommend[4]);
+              this.$router.push("/Roommate");
+            });
+        });
       this.$http
         .post("/api/GetHouseInfo", {
           houseID: this.houseID,
@@ -417,36 +443,6 @@ export default {
         .then((res) => {
           this.houseInfo = res.body;
           this.$store.commit("rentNumber", this.houseInfo[0].MaxNum);
-        });
-
-      this.$http
-        .post("pythonApi/recommend", {
-          id: this.user,
-          personality: this.userInfo[0].personality,
-          smoke: this.userInfo[0].smoke,
-          drink: this.userInfo[0].drink,
-          pet: this.userInfo[0].pet,
-          wake: this.userInfo[0].wake,
-          sleep: this.userInfo[0].sleep,
-          clean: this.userInfo[0].clean,
-          bath: this.userInfo[0].bath,
-          back: this.userInfo[0].back,
-          m_smoke: this.userInfo[0].m_smoke,
-          m_drink: this.userInfo[0].m_drink,
-          m_back: this.userInfo[0].m_back,
-          m_noice: this.userInfo[0].m_noice,
-          s_custom: this.userInfo[0].s_custom,
-          clock: this.userInfo[0].clock,
-          sleep_reason: this.userInfo[0].sleep_reason,
-        })
-        .then((res) => {
-          this.recommend = res.data;
-          this.$store.commit("recommend1", this.recommend[0]);
-          this.$store.commit("recommend2", this.recommend[1]);
-          this.$store.commit("recommend3", this.recommend[2]);
-          this.$store.commit("recommend4", this.recommend[3]);
-          this.$store.commit("recommend5", this.recommend[4]);
-          this.$router.push("/Roommate");
         });
     },
   },
