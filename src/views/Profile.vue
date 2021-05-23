@@ -26,7 +26,7 @@
             <a class="nav-link" href="javascript:;">合約go</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:;">檢舉</a>
+            <a class="nav-link" @click.stop="GoToReport">檢舉</a>
           </li>
           <li class="nav-item">
             <div class="dropleft">
@@ -139,6 +139,9 @@ export default {
     },
     profile() {
       this.$router.push("/Profile");
+    },
+    GoToReport(){
+      this.$router.push("/Report");
     },
     give() {
       this.$http

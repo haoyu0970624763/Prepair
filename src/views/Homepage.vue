@@ -27,7 +27,7 @@
             <a class="nav-link" href="javascript:;">合約go</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:;">檢舉</a>
+            <a class="nav-link" @click.stop="GoToReport">檢舉</a>
           </li>
           <li class="nav-item">
             <div class="dropleft">
@@ -192,6 +192,8 @@ export default {
   data() {
     return {
       user: this.$store.state.userName,
+      houseID: this.$store.state.houseID,
+      
       region: "南部",
       city: "台南市",
       township: "東區",
@@ -200,6 +202,7 @@ export default {
       message: "",
       houses: "",
       userInfo: "",
+      houseInfo: "",
       recommend: "",
       Country: [
         { region: "北部", city: "台北市" },
@@ -322,7 +325,7 @@ export default {
       ],
     };
   },
-   created() {
+  created() {
     this.$http
       .post("/api/loadHouse", {
         city: this.city,
@@ -380,11 +383,14 @@ export default {
     writeHabit() {
       this.$router.push("/LivingHabit");
     },
-    profile (){
-      this.$router.push("/Profile")
+    profile() {
+      this.$router.push("/Profile");
     },
     GoToHouse() {
       this.$router.push("/Homepage");
+    },
+    GoToReport(){
+      this.$router.push("/Report");
     },
     searchRoommate() {
       this.$store.commit("personality", this.userInfo[0].personality);
@@ -405,7 +411,16 @@ export default {
       this.$store.commit("sleep_reason", this.userInfo[0].sleep_reason);
       this.$store.commit("addr", this.userInfo[0].address);
       this.$http
-        .post('pythonApi/recommend', {
+        .post("/api/GetHouseInfo", {
+          houseID: this.houseID,
+        })
+        .then((res) => {
+          this.houseInfo = res.body;
+          this.$store.commit("rentNumber", this.houseInfo[0].MaxNum);
+        });
+
+      this.$http
+        .post("pythonApi/recommend", {
           id: this.user,
           personality: this.userInfo[0].personality,
           smoke: this.userInfo[0].smoke,
@@ -433,7 +448,6 @@ export default {
           this.$store.commit("recommend5", this.recommend[4]);
           this.$router.push("/Roommate");
         });
-        
     },
   },
 };
@@ -565,13 +579,6 @@ export default {
         }
       }
     }
-  }
-  .box {
-    position: relative;
-    top: 100px;
-    width: 100%;
-    height: 200px;
-    background-color: white;
   }
 }
 </style>

@@ -27,7 +27,7 @@
             <a class="nav-link" href="javascript:;">合約go</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:;">檢舉</a>
+            <a class="nav-link" @click.stop="GoToReport">檢舉</a>
           </li>
           <li class="nav-item">
             <div class="dropleft">
@@ -69,39 +69,44 @@
     </div>
 
     <div class="pair">
-      <div class="title">適合人選</div>
+      <div class="title">配對人選</div>
       <div class="line"></div>
 
       <div class="recommend_people">
-        <div class="person-region" id="first">
+        <div class="person-region" id="first" v-if="RoommateNum - 1 > 0">
           <div class="person">
             <div class="face"></div>
             <p>{{ this.$store.state.recommend1 }}</p>
           </div>
-          <button type="button" class="btn btn-light">揪團租</button>
         </div>
-        <div class="person-region" id="second">
+        <div class="person-region" id="second" v-if="RoommateNum - 2 > 0">
           <div class="person">
             <div class="face"></div>
             <p>{{ this.$store.state.recommend2 }}</p>
           </div>
-          <button type="button" class="btn btn-light">揪團租</button>
         </div>
-        <div class="person-region" id="third">
+        <div class="person-region" id="third" v-if="RoommateNum - 3 > 0">
           <div class="person">
             <div class="face"></div>
             <p>{{ this.$store.state.recommend3 }}</p>
           </div>
           <button type="button" class="btn btn-light">揪團租</button>
         </div>
-        <div class="person-region" id="fourth">
+        <div class="person-region" id="fourth" v-if="RoommateNum - 4 > 0">
           <div class="person">
             <div class="face"></div>
             <p>{{ this.$store.state.recommend4 }}</p>
           </div>
-          <button type="button" class="btn btn-light">揪團租</button>
         </div>
       </div>
+
+      <button
+        type="button"
+        class="btn btn-outline-secondary contract"
+        @click.stop="writeContract"
+      >
+        簽約
+      </button>
     </div>
   </div>
 </template>
@@ -109,9 +114,14 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      RoommateNum: this.$store.state.rentNumber,
+      houseID: this.$store.state.houseID,
+    };
   },
-  created() {},
+  created() {
+
+  },
   methods: {
     logout() {
       this.$router.push("/");
@@ -119,11 +129,35 @@ export default {
     writeHabit() {
       this.$router.push("/LivingHabit");
     },
-    profile (){
-      this.$router.push("/Profile")
+    profile() {
+      this.$router.push("/Profile");
     },
     GoToHouse() {
       this.$router.push("/Homepage");
+    },
+    GoToReport(){
+      this.$router.push("/Report");
+    },
+    writeContract() {
+
+      this.$http
+        .post("/api/writeContract", {
+          userID:this.$store.state.userName,
+          RoommateNum: this.RoommateNum,
+          houseID: this.houseID,
+          recommend1:this.$store.state.recommend1,
+          recommend2:this.$store.state.recommend2,
+          recommend3:this.$store.state.recommend3,
+          recommend4:this.$store.state.recommend4,
+          recommend5:this.$store.state.recommend5
+        })
+        .then((res) => {
+          /*
+          this.address = res.body;
+          this.$store.commit("addr", this.address);
+          this.$router.push("/Homepage");
+          */
+        });
     },
   },
 };
@@ -301,13 +335,14 @@ export default {
             text-align: center;
           }
         }
-
-        button {
-          position: relative;
-          top: 10px;
-          left: 100px;
-        }
       }
+    }
+    .contract {
+      position: relative;
+      left: 45vw;
+      top: 10vh;
+      width: 100px;
+      height: 50px;
     }
   }
 }

@@ -5,6 +5,7 @@ import Homepage from '@/views/Homepage.vue'
 import LivingHabit from '@/views/LivingHabit.vue'
 import Roommate from '@/views/Roommate.vue'
 import Profile from '@/views/Profile.vue'
+import Report from '@/views/Report.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -31,6 +32,10 @@ export default new Router({
     {
       path: '/Profile',
       component:Profile
+    },
+    {
+      path: '/Report',
+      component:Report
     }
   ]
 })

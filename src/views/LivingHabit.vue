@@ -27,7 +27,7 @@
               <a class="nav-link" href="javascript:;">合約go</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:;">檢舉</a>
+              <a class="nav-link" @click.stop="GoToReport">檢舉</a>
             </li>
             <li class="nav-item">
               <div class="dropleft">
@@ -215,7 +215,7 @@
           id="sendButton"
           type="button"
           class="btn btn-outline-secondary"
-          @click.stop="trans"
+          @click.stop="sendHabit"
         >
           確認送出
         </button>
@@ -262,7 +262,10 @@ export default {
     GoToHouse() {
       this.$router.push("/Homepage");
     },
-    trans() {
+    GoToReport(){
+      this.$router.push("/Report");
+    },
+    sendHabit() {
       this.$http
         .post("/api/sendHabit", {
           id: this.name,
