@@ -35,6 +35,16 @@ router.post('/CheckRent', (req, res, next) => {
 router.post('/GiveMoney', (req, res, next) => {
     api.GiveMoney(req, res, next);
 });
+router.post('/GetMoneyInfo', (req, res, next) => {
+    api.GetMoneyInfo(req, res, next);
+});
+
+router.post('/addTenant_success', (req, res, next) => {
+    api.addTenant_success(req, res, next);
+});
+router.post('/setCoinRule_success', (req, res, next) => {
+    api.setCoinRule_success(req, res, next);
+});
 
 
 module.exports = router;

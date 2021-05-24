@@ -23,7 +23,7 @@
             <a class="nav-link" @click.stop="GoToHouse">去看房</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:;">合約go</a>
+            <a class="nav-link" @click.stop="GoToContract">合約go</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" @click.stop="GoToReport">檢舉</a>
@@ -42,11 +42,9 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="" @click="writeHabit"
-                  >填寫使用者資料與習慣</a
-                >
-                <a class="dropdown-item" href="" @click="profile"
                   >查看個人檔案</a
                 >
+                <a class="dropdown-item" href="" @click="profile">查看合約</a>
                 <a class="dropdown-item" href="" @click="logout">登出</a>
               </div>
             </div>
@@ -62,38 +60,50 @@
           <p>:</p>
           <p>{{ this.balance }}</p>
           <p>coin</p>
-          <p>1 coin = 1000台幣</p>
+          <p>, 1 coin = 1000台幣</p>
         </div>
-        <div class="ProfileText" v-if="this.rent == 'yes'">
+
+        <div class="ProfileText">
           <p>租屋情況</p>
           <p>:</p>
-          <p>已租房</p>
+          <p>{{ this.rent }}</p>
         </div>
-        <div class="ProfileText" v-if="this.rent == 'no'">
-          <p>租屋情況</p>
-          <p>:</p>
-          <p>尚未租房</p>
-        </div>
-        <div class="ProfileText" v-if="this.rent = 'yes'">
+
+        <div class="ProfileText" v-if="(this.rent = '已租房')">
           <p>租屋房東</p>
           <p>:</p>
-          <p>{{houseInfo[0].owner}}</p>
+          <p>{{ this.houseOwner }}</p>
         </div>
 
-        <div class="ProfileText" v-if="this.rent == 'yes'">
-          <p>當月租金繳交狀況</p>
+        <div class="ProfileText" v-if="this.rent == '已租房'">
+          <p>租期</p>
           <p>:</p>
-          <p>{{ givemoney }}</p>
+          <p>{{ this.MoneyInfo[0].time1 }} - {{ this.MoneyInfo[0].time2 }}</p>
         </div>
 
-        <div class="ProfileText" v-if="this.rent == 'yes'">
-          <p>當月水電費繳交</p>
-          <p>:</p>
-          <p>{{ givemoney }}</p>
+        <div class="ProfileText" v-if="this.rent == '已租房'">
+          <div class="left">租金:{{ this.MoneyInfo[0].money }} / 月</div>
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            @click.stop="giveType1"
+            v-if="this.record1 == '無交易紀錄'"
+          >
+            繳費
+          </button>
+          <div class="right">繳交紀錄: {{ this.record1 }}</div>
         </div>
-
-        <div class="ProfileText" v-if="this.givemoney == '尚未繳交'">
-          <button @click.stop="give">繳交</button>
+        <div class="ProfileText" v-if="this.rent == '已租房'">
+          <div class="left">水電費 : {{ this.eletricMoney }} 元</div>
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            @click.stop="giveType2"
+            v-if="this.record2 == '無交易紀錄'"
+          >
+            繳費
+          </button>
+          <div class="right">繳交紀錄: {{ this.record2 }}</div>
         </div>
       </div>
     </div>
@@ -106,10 +116,16 @@ export default {
     return {
       user: this.$store.state.userName,
       address: this.$store.state.address,
+      houseOwner: "k",
+      houseID: "",
       balance: "",
       rent: "",
-      houseInfo:'',
-      givemoney: "尚未繳交",
+      houseInfo: "",
+      MoneyInfo: "",
+      eletricMoney: "1570",
+      record1: "",
+      record2: "",
+      moneyType: "",
     };
   },
   async beforeMount() {
@@ -120,20 +136,36 @@ export default {
       .then((res) => {
         this.balance = res.body;
       });
-
     this.$http
       .post("/api/CheckRent", {
         id: this.user,
       })
       .then((res) => {
-        if(res.body=='no'){
-          this.rent='no'
+        if (res.body == "no") {
+          this.rent = "尚未租房";
+        } else {
+          this.rent = "已租房";
+          this.houseOwner = res.body.owner;
+          this.houseID = res.body.houseID;
         }
-        else{
-          this.rent='yes'
-          this.houseInfo = res.body;
-        }
-        
+        this.$http
+          .post("/api/GetMoneyInfo", {
+            houseID: this.houseID,
+            id: this.user,
+          })
+          .then((res) => {
+            this.MoneyInfo = res.body;
+            if (this.MoneyInfo[0].moneyHash == "") {
+              this.record1 = "無交易紀錄";
+            } else {
+              this.record1 = this.MoneyInfo[0].moneyHash;
+            }
+            if (this.MoneyInfo[0].ele_moneyHash == "") {
+              this.record2 = "無交易紀錄";
+            } else {
+              this.record2 = this.MoneyInfo[0].ele_moneyHash;
+            }
+          });
       });
   },
   methods: {
@@ -149,17 +181,30 @@ export default {
     profile() {
       this.$router.push("/Profile");
     },
-    GoToReport(){
+    GoToReport() {
       this.$router.push("/Report");
+    },
+    GoToContract() {
+      this.$router.push("/Contract");
+    },
+    giveType1() {
+      this.moneyType = 1;
+      this.give();
+    },
+    giveType2() {
+      this.moneyType = 2;
+      this.give();
     },
     give() {
       this.$http
         .post("/api/GiveMoney", {
+          id: this.user,
+          moneyType: this.moneyType,
+          money: this.MoneyInfo[0].money,
+          eletricMoney: this.eletricMoney,
           address: this.address,
         })
-        .then((res) => {
-          this.givemoney='繳交'
-        });
+        .then((res) => {});
     },
   },
 };
@@ -223,17 +268,47 @@ export default {
       display: flex;
       flex-direction: row;
       left: 10vw;
-      width: 40vw;
-      height: 120px;
+      width: 65vw;
+      height: 80px;
+      .left {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        width: 180px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      button {
+        position: relative;
+        top: 15px;
+        height: 50px;
+        width: 100px;
+      }
+      .right{
+        position: relative;
+        left: 50px;
+        top: 25px;
+        width: 800px;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+      }
+
       p {
         position: relative;
         font-size: 24px;
         font-weight: bold;
         margin-right: 20px;
       }
-      button {
-        height: 50px;
-        width: 100px;
+      #special {
+        position: relative;
+        width: 50vw;
+        left: 10vw;
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 20px;
+        color: red;
       }
     }
   }

@@ -544,8 +544,397 @@ var abi = [
 	}
 ];
 
+
+var abi2 = [
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_houseNum",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address payable",
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_keepPet",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_smoke",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_drinking",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gbfriend",
+				"type": "uint256"
+			}
+		],
+		"name": "addTenant",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "changepaid",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_houseNum",
+				"type": "uint256"
+			}
+		],
+		"name": "distributePenalty",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "penaltyToContract",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_str",
+				"type": "string"
+			}
+		],
+		"name": "recordPict",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_houseNum",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_petcoin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_smokecoin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_drinkingcoin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gbfriendcoin",
+				"type": "uint256"
+			}
+		],
+		"name": "setCoinRule",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_houseNum",
+				"type": "uint256"
+			}
+		],
+		"name": "getCoinRule",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getContractMoney",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "count",
+				"type": "uint256"
+			}
+		],
+		"name": "getPictAll",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "getPictNum",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "getTenantInfofromAddr",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_houseNum",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_num",
+				"type": "uint256"
+			}
+		],
+		"name": "getTenantsfromHouse",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_houseNum",
+				"type": "uint256"
+			}
+		],
+		"name": "getTenantsNumfromHouse",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_whichPenalty",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_houseNum",
+				"type": "uint256"
+			}
+		],
+		"name": "howMuchPenalty",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "ifPaidPenalty",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+
 var address = '0x02B98323cD03A71E7b20cbD7aF1f397601220054'
 var MyContract = new web3.eth.Contract(abi, address);
+
+var address2 = '0x3Df706498831091a40F6Df536b73a3fCD8dD471d'
+var LifeContract = new web3.eth.Contract(abi2, address2);
 
 
 // set UTF8
@@ -699,19 +1088,19 @@ pool.getConnection((err, connection) => {
 			console.log("table of HOUSE exists")
 		}
 	});
-
-	var sql8 = "SHOW TABLES LIKE 'moneyRecord'"
-	var sql9 = "CREATE TABLE moneyRecord (id VARCHAR(20),HouseID VARCHAR(20),money INT, eletricMoney INT, moneyHash VARCHAR(40) ,ele_moneyHash VARCHAR(40))";
+	
+	var sql8 = "SHOW TABLES LIKE 'Contract'"
+	var sql9 = "CREATE TABLE Contract (houseID VARCHAR(20),id VARCHAR(20),time1 VARCHAR(20),time2 VARCHAR(20),money VARCHAR(20), deposit VARCHAR(20), plug VARCHAR(20),moneyHash VARCHAR(200) ,ele_moneyHash VARCHAR(200))";
 	connection.query(sql8, function (err, result) {
 		if (err) throw err;
 		if (result.length == 0) {
 			connection.query(sql9, function (err, result) {
 				if (err) throw err;
-				console.log("table of moneyRecord created");
+				console.log("table of Contract created");
 			})
 		}
 		else {
-			console.log("table of moneyRecord exists");
+			console.log("table of Contract exists");
 		}
 		connection.release()
 	});
@@ -750,7 +1139,7 @@ module.exports = {
 			var password = req.body.password;
 			pool.getConnection((err, connection) => {
 				var sql = 'insert into USER(id, password,personality ,smoke , drink , pet , wake , sleep , clean , bath , back , s_custom,m_smoke , m_drink , m_back , m_noise , clock ,sleep_reason, address) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
-				connection.query(sql, [id, password, 'INFJ', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', addr], (err, result) => {
+				connection.query(sql, [id, password, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', addr], (err, result) => {
 					if (err) throw err
 					console.log("register success")
 				})
@@ -852,11 +1241,11 @@ module.exports = {
 					res.send('no')
 				}
 				else {
-					houseID=result[0].rentID;
-					
-					connection.query(sql2, [houseID], function (err, result){
+					houseID = result[0].rentID;
+
+					connection.query(sql2, [houseID], function (err, result) {
 						if (err) throw err;
-						res.send(result)
+						res.send({houseID:houseID,owner:result[0].owner})
 					})
 				}
 				connection.release()
@@ -866,23 +1255,47 @@ module.exports = {
 	},
 	GiveMoney(req, res, next) {
 
+
+		var id=req.body.id;
+		var moneyType=req.body.moneyType;
+		var money= (req.body.money / 1000.0).toString();
+		var eletricMoney= (req.body.eletricMoney / 1000.0).toString();
+		
 		var address_from = req.body.address;
 		var address_to = '0xd5f881f474b8648fa935719b1de77c488a1d0541'
-		var trans_value = 100000000000000000;
-		var password = 'useless';
+		var password = 'password';
 
+		var instruction;
+		var sql = "UPDATE Contract SET moneyHash=? where id=?"
+		var sql2 = "UPDATE Contract SET ele_moneyHash=? where id=?"
+
+		var weiValue;
+		if(moneyType=='1'){
+			weiValue= web3.utils.toWei(money, 'ether')
+			instruction=sql
+		}
+		else{
+			weiValue= web3.utils.toWei(eletricMoney, 'ether')
+			instruction=sql2
+		}
+		
 		web3.eth.personal.unlockAccount(address_from, password, 9999, function () {
 			console.log('unlock accounts ok')
 			web3.eth.sendTransaction({
 				from: address_from,
 				to: address_to,
-				value: trans_value,
-				//value: web3.utils.toWei(trans_value,"ether"),
+				value: weiValue
 			}, function (err, transactionHash) {
 				if (!err) {
 					console.log('need mined')
 					console.log('transactionHash:', transactionHash)
-					res.send({ msg: "ok", hash: transactionHash });
+					pool.getConnection((err, connection) => {
+						if (err) throw err;		
+						connection.query(instruction,[transactionHash,id], (err, result) => {
+							if (err) throw err;
+							
+						})
+					})
 				} else {
 					console.log('-------------error-----------')
 					console.log(err)
@@ -890,6 +1303,7 @@ module.exports = {
 				}
 			})
 		});
+		
 
 	},
 	GetHouseInfo(req, res, next) {
@@ -909,26 +1323,43 @@ module.exports = {
 		})
 	},
 	writeContract(req, res, next) {
-
-		var userID = req.body.userID
-		var houseID = req.body.houseID
-		var RoommateNum = req.body.RoommateNum
-		var recommend1 = req.body.recommend1
-		var recommend2 = req.body.recommend2
-		var recommend3 = req.body.recommend3
-		var recommend4 = req.body.recommend4
-		var recommend5 = req.body.recommend5
+		var houseID = req.body.houseID;
+		var userID = req.body.userID;
+		var RoommateNum = req.body.RoommateNum;
+		var recommend1 = req.body.recommend1;
+		var recommend2 = req.body.recommend2;
+		var recommend3 = req.body.recommend3;
+		var recommend4 = req.body.recommend4;
+		var recommend5 = req.body.recommend5;
+		var time1=req.body.time1;
+		var time2=req.body.time2;
+		var money1=req.body.money1;
+		var money2=req.body.money2;
+		var money3=req.body.money3;
+		var money4=req.body.money4;
+		var deposit=req.body.deposit;
+		var plug=req.body.plug;
 
 		var group = [userID, recommend1, recommend2, recommend3, recommend4, recommend5]
+		var Moneygroup = [money1,money2,money3,money4,'','']
 
 		for (i = 6; i > RoommateNum; i--) {
 			group.pop()
+			Moneygroup.pop()
 		}
+		console.log(group)
+		console.log(Moneygroup)
 		var sql = 'insert into BOOLRENT(id, rentID) values(?,?)'
+		var sql2 = 'insert into  Contract(houseID,id,time1,time2,money,deposit,plug,moneyHash,ele_moneyHash) values(?,?,?,?,?,?,?,?,?)'
 		pool.getConnection((err, connection) => {
 			if (err) throw err;
 			for (i = 0; i < group.length; i++) {
 				connection.query(sql, [group[i], houseID], function (err, result) {
+					if (err) throw err;
+				});
+			}
+			for (i = 0; i < group.length; i++) {
+				connection.query(sql2, [houseID,group[i], time1,time2,Moneygroup[i],deposit,plug,'',''], function (err, result) {
 					if (err) throw err;
 				});
 			}
@@ -938,17 +1369,94 @@ module.exports = {
 	sendPersonality(req, res, next) {
 
 		var userID = req.body.userID
-		var personality=req.body.personality
-		
+		var personality = req.body.personality
+
 		var sql = 'UPDATE USER SET personality=? where id=?'
 		pool.getConnection((err, connection) => {
 			if (err) throw err;
-			connection.query(sql, [personality,userID], function (err, result) {
+			connection.query(sql, [personality, userID], function (err, result) {
 				if (err) throw err;
 				console.log("changing is success!")
 			});
 			connection.release()
 		})
 	},
+	GetMoneyInfo(req, res, next) {
+
+		var houseID = req.body.houseID;
+		var id=req.body.id
+		
+		
+		pool.getConnection((err, connection) => {
+			if (err) throw err;
+			var sql = "select * from Contract where houseID=? and id=?"
+
+			connection.query(sql, [houseID,id], function (err, result) {
+				if (err) throw err;
+				if (result.length != 0) {
+					console.log(result)
+					res.send(result)
+					connection.release()
+				}
+			});
+		})
+	},
+	
+	addTenant_success(req, res, next) {
+		var drinking = req.body.drinking;
+		var smoke = req.body.smoke;
+		var pet = req.body.pet;
+		var gbfriend = req.res.gbfriend;
+		///你看你要設房號多少
+		var houseNumber = 0;
+		///我的合約裡面是房客一個一個設的@@所以每個地址都要來一遍@@
+		var tenantAddress = 0xdda305bfb34d2d66cde88d821a5231b8520074e5;
+		console.log(pet + ' , ' + smoke + ' , ' + drinking + ' , ' + gbfriend);
+
+		LifeContract.methods.addTenant(houseNumber, tenantAddress, pet, smoke, drinking, gbfriend).send({ from: tenantAddress }, function (error, transactionHash) {
+			if (!error) {
+				console.log('need mined')
+				console.log('transactionHash:', transactionHash)
+				res.send({ msg: "ok", transactionHash: transactionHash });
+			} else {
+				console.log('-------------error-----------')
+				console.log(error)
+				console.log('-------------error-----------')
+			}
+		});
+
+	},
+	setCoinRule_success(req, res, next) {
+		///設定你要設定的房號
+		var houseNum = req.body.houseNum;
+		///設定的人，表發出交易的人
+		var tenantAddr = req.body.tenantAddr;
+		var petcoin = req.body.petcoin;
+		var smokecoin = req.body.smokecoin;
+		var drinkingcoin = req.body.drinkingcoin;
+		var gbfriendcoin = req.body.gbfriendcoin;
+
+		console.log(houseNum + ' , ' + tenantAddr + ' , ' + petcoin + ' , ' + smokecoin + ' , ' + drinkingcoin + ' , ' + gbfriendcoin);
+
+		var unlockaddress = tenantAddr;
+		///用你的密碼
+		var unlockpassword = 'password'
+		web3.eth.personal.unlockAccount(unlockaddress, unlockpassword, 9999, function () {
+			console.log('unlock accounts ok')
+		});
+
+		LifeContract.methods.setCoinRule(houseNum, petcoin, smokecoin, drinkingcoin, gbfriendcoin).send({ from: tenantAddr }, function (error, transactionHash) {
+			if (!error) {
+				console.log('need mined')
+				console.log('transactionHash:', transactionHash)
+				res.send(transactionHash);
+			} else {
+				console.log('-------------error-----------')
+				console.log(error)
+				console.log('-------------error-----------')
+			}
+		});
+
+	}
 
 }

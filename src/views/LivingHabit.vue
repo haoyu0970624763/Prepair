@@ -24,7 +24,7 @@
               <a class="nav-link" @click.stop="GoToHouse">去看房</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:;">合約go</a>
+              <a class="nav-link" @click.stop="GoToContract">合約go</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" @click.stop="GoToReport">檢舉</a>
@@ -43,10 +43,10 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" @click="writeHabit"
-                    >填寫使用者資料與習慣</a
+                    >查看個人檔案</a
                   >
                   <a class="dropdown-item" href="" @click="profile"
-                    >查看個人檔案</a
+                    >查看合約</a
                   >
                   <a class="dropdown-item" @click="logout">登出</a>
                 </div>
@@ -265,6 +265,9 @@ export default {
     GoToReport(){
       this.$router.push("/Report");
     },
+    GoToContract() {
+      this.$router.push("/Contract");
+    },
     sendHabit() {
       this.$http
         .post("/api/sendHabit", {
@@ -301,29 +304,41 @@ export default {
   padding: 0;
   margin: 0;
   width: 100vw;
-  overflow-x: hidden;
   font-family: Noto Sans CJK TC;
   #navigation {
     width: 100vw;
     min-height: 7.5vh;
     max-height: 40vh;
     font-size: 1rem;
+
+    z-index: 10;          
+    position: fixed;      
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    min-width: 100%;
   }
   #Container {
-    width: 100vw;
-    height: 167.5vh;
+    background-image: url("../assets/background.jpg");
+    background-position: center;
+    background-size: cover;
     position: absolute;
-    background-color: #f0f0f0;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
     .questionBox {
+      
       position: relative;
-      left: 10vw;
-      top: 5vh;
-      width: 80vw;
-      background-color: #ffe6d9;
+      left: 20vw;
+      top: 20vh;
+      width: 60vw;
+      background-color: #E4DCD2;
     }
     .title {
-      background-color: #ffad86;
-      height: 5vh;
+      background-color: #7F6000;
+      height: 6vh;
       color: white;
       font-weight: bold;
       font-size: 26px;
@@ -333,7 +348,7 @@ export default {
     .classification-title {
       font-weight: bold;
       margin-left: 60px;
-      margin-top: 60px;
+      margin-top: 50px;
       font-size: 22px;
     }
     .classification-word {
@@ -354,7 +369,8 @@ export default {
     }
     #sendButton {
       margin-top: 20px;
-      margin-left: 37.5vw;
+      margin-left: 25vw;
+      margin-bottom: 20px;
       z-index: 1;
     }
   }

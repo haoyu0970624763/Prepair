@@ -24,7 +24,7 @@
             <a class="nav-link" @click.stop="GoToHouse">去看房</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:;">合約go</a>
+            <a class="nav-link" @click.stop="GoToContract">合約go</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" @click.stop="GoToReport">檢舉</a>
@@ -43,10 +43,10 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="" @click="writeHabit"
-                  >填寫使用者資料與習慣</a
+                  >查看個人檔案</a
                 >
                 <a class="dropdown-item" href="" @click="profile"
-                  >查看個人檔案</a
+                  >查看合約</a
                 >
                 <a class="dropdown-item" href="" @click="logout">登出</a>
               </div>
@@ -103,7 +103,7 @@
       <button
         type="button"
         class="btn btn-outline-secondary contract"
-        @click.stop="writeContract"
+        @click.stop="GoToContract"
       >
         簽約
       </button>
@@ -138,27 +138,9 @@ export default {
     GoToReport(){
       this.$router.push("/Report");
     },
-    writeContract() {
-
-      this.$http
-        .post("/api/writeContract", {
-          userID:this.$store.state.userName,
-          RoommateNum: this.RoommateNum,
-          houseID: this.houseID,
-          recommend1:this.$store.state.recommend1,
-          recommend2:this.$store.state.recommend2,
-          recommend3:this.$store.state.recommend3,
-          recommend4:this.$store.state.recommend4,
-          recommend5:this.$store.state.recommend5
-        })
-        .then((res) => {
-          /*
-          this.address = res.body;
-          this.$store.commit("addr", this.address);
-          this.$router.push("/Homepage");
-          */
-        });
-    },
+    GoToContract() {
+      this.$router.push("/Contract");
+    }
   },
 };
 </script>

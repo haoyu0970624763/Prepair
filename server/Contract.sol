@@ -6,7 +6,7 @@ contract Contract{
     uint tenantCount=0;
     uint houseCount = 0;
 
-    // address payable owner = 0x8883d7dC9FE7f08615e073d1a6afeD2ae71CB3e5;
+    //address payable owner = 0x8883d7dC9FE7f08615e073d1a6afeD2ae71CB3e5;
 
     struct House{
         address landlordAddr;
@@ -70,7 +70,7 @@ contract Contract{
 
     event getcontractMoneybyRent(uint howmuch,address whoPaidMoney);
     function rentToContract()public payable{
-        require(msg.value == tenantInfo[msg.sender].rent);
+        require(msg.value == (tenantInfo[msg.sender].rent)*1000000000000000000);
         tenantInfo[msg.sender].hadPaidRent = true;
         countMoney += msg.value;
         emit getcontractMoneybyRent(msg.value,msg.sender);
@@ -84,7 +84,7 @@ contract Contract{
    
     event getcontractMoneybyPower(uint howmuch,address whoPaidMoney);
     function powerToContract()public payable{
-        require(msg.value == tenantInfo[msg.sender].powerCost);
+        require(msg.value == (tenantInfo[msg.sender].powerCost)*1000000000000000000);
         tenantInfo[msg.sender].hadPaidPower = true;
         countMoney += msg.value;
         emit getcontractMoneybyPower(msg.value,msg.sender);
@@ -129,31 +129,12 @@ contract Contract{
         return true;
     }
     function RentToLandlord(uint _houseNumber)public {
-        houseLandlord[_houseNumber].transfer(houseRent[_houseNumber]);
+        houseLandlord[_houseNumber].transfer((houseRent[_houseNumber])*1000000000000000000);
         countMoney -= houseRent[_houseNumber];
         for(uint i=0; i<houseTenants[_houseNumber].length; i++){
             tenantInfo[houseTenants[_houseNumber][i]].hadPaidRent = false;
         }
     }
-    
-    
-    //event powerTolandlord(bool landlordGetPower);
-    /*function PowerCostToLandlord(uint _houseNumber,uint _powerCost)public payable returns(bool){
-        require(countMoney >= _powerCost);
-        for(uint i=0 ; i<houseTenants[_houseNumber].length; i++){
-            if(tenantInfo[houseTenants[_houseNumber][i]].hadPaidPower == false) {
-                //emit rentTolandlord(false);
-                return false;
-            }
-        }
-        houseLandlord[_houseNumber].transfer(_powerCost);
-        countMoney -= _powerCost;
-        //emit rentTolandlord(true);
-        for(uint i=0; i<houseTenants[_houseNumber].length; i++){
-            tenantInfo[houseTenants[_houseNumber][i]].hadPaidPower = false;
-        }
-        return true;
-    }*/
     
     function checkIfTenantsHadPaidPower(uint _houseNumber)public view returns(bool){
         uint i;
@@ -165,7 +146,7 @@ contract Contract{
         return true;
     }
     function PowerToLandlord(uint _houseNumber,uint _powerCost)public payable{
-        houseLandlord[_houseNumber].transfer(_powerCost);
+        houseLandlord[_houseNumber].transfer((_powerCost)*1000000000000000000);
         countMoney -= _powerCost;
         for(uint i=0; i<houseTenants[_houseNumber].length; i++){
             tenantInfo[houseTenants[_houseNumber][i]].hadPaidPower = false;
@@ -179,5 +160,23 @@ contract Contract{
         emit contractMoney(money);
         return money;
     }
+    
+    /*struct Images{
+        uint housenum;
+        address owner;
+        string pict;
+    }
+    
+    mapping (address => Images[]) picture;
+    function recordPict(address _addr,string memory _str,uint _housenum) public {
+        picture[_addr].push(Images(_housenum,_addr,_str)); 
+        
+    }
+    functure getPictNum()public{
+        
+    }
+    function  getPictAll()public view returns(){
+        
+    }*/
     
 }

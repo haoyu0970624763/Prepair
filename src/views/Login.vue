@@ -159,12 +159,10 @@ export default {
         .then((res) => {
           this.address = res.body;
           this.$store.commit("addr", this.address);
-          window.location.href='http://127.0.0.1:5500/index.html'
+          this.$store.commit("name", this.formRegister.userName);
+          this.$store.commit("password", this.formRegister.userPassword);
+          window.location.href = "http://127.0.0.1:5500/index.html";
         });
-
-      this.$store.commit("name", this.formRegister.userName);
-      this.$store.commit("password", this.formRegister.userPassword);
-
     },
     // 清空输入框
     clearInput() {
