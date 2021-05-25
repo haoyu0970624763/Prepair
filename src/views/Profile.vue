@@ -59,8 +59,8 @@
           <p>錢包餘額</p>
           <p>:</p>
           <p>{{ this.balance }}</p>
-          <p>coin</p>
-          <p>, 1 coin = 1000台幣</p>
+          <p> eth </p>
+          <p>, 1 eth = 1000台幣</p>
         </div>
 
         <div class="ProfileText">
