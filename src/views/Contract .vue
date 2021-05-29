@@ -171,7 +171,19 @@
             <div class="IndentInputLine">
               如欲提前解約，乙方不得與甲方要求返還剩餘租金，並不予押金抵扣
             </div>
-            <div style="margin-top: 60px align: center">
+
+            <div
+              id="input"
+              style="margin-bottom: 30px align: center width=200px"
+            >
+              <input
+                
+                v-model="pic"
+                placeholder="請輸入圖片網址"
+              />
+            </div>
+
+            <div style="margin-top: 60px align: center ">
               <button
                 id="sendButton"
                 type="button"
@@ -182,7 +194,8 @@
               </button>
             </div>
             <div class="afterContract" v-if="this.showAfterContract == true">
-              等待其他室友的同意，若同意則會將此合約放置在區塊鏈上
+              等待其他室友的同意，若同意則會將此合約生效
+              {{ this.hash2 }}
             </div>
           </div>
         </div>
@@ -298,10 +311,10 @@
             >
               送出合約
             </button>
-            <div class="afterContract" v-if="this.showAfterContract2==true"> 
+            <div class="afterContract" v-if="this.showAfterContract2 == true">
               將合約部署於 0x3Df706498831091a40F6Df536b73a3fCD8dD471d 此地址
-              <br>
-              hash值＝{{this.hash}}
+              <br />
+              hash值＝{{ this.hash }}
             </div>
           </div>
         </div>
@@ -327,9 +340,10 @@ export default {
       money3: "",
       money4: "",
       deposit: "",
+      pic: "",
       plug: "",
-      hash:'k',
-
+      hash: "k",
+      hash2: "",
       // rule
       drink: "可以喝酒",
       d_money: 0,
@@ -339,7 +353,6 @@ export default {
       p_money: 0,
       bring: "可以帶人",
       b_money: 0,
-
       // 显示不同的view
       typeView: 0,
       showAfterContract: false,
@@ -370,25 +383,40 @@ export default {
       this.$router.push("/Contract");
     },
     writeContract() {
-      this.$http.post("/api/writeContract", {
-        houseID: this.$store.state.houseID,
-        userID: this.$store.state.userName,
-        RoommateNum: this.$store.state.rentNumber,
-        recommend1: this.$store.state.recommend1,
-        recommend2: this.$store.state.recommend2,
-        recommend3: this.$store.state.recommend3,
-        recommend4: this.$store.state.recommend4,
-        recommend5: this.$store.state.recommend5,
-        time1: this.time1,
-        time2: this.time2,
-        money1: this.money1,
-        money2: this.money2,
-        money3: this.money3,
-        money4: this.money4,
-        deposit: this.deposit,
-        plug: this.plug,
-      });
-      this.showAfterContract = true;
+      this.$http
+        .post("/api/writeContract", {
+          houseID: this.$store.state.houseID,
+          userID: this.$store.state.userName,
+          RoommateNum: this.$store.state.rentNumber,
+          recommend1: this.$store.state.recommend1,
+          recommend2: this.$store.state.recommend2,
+          recommend3: this.$store.state.recommend3,
+          recommend4: this.$store.state.recommend4,
+          recommend5: this.$store.state.recommend5,
+          time1: this.time1,
+          time2: this.time2,
+          money1: this.money1,
+          money2: this.money2,
+          money3: this.money3,
+          money4: this.money4,
+          deposit: this.deposit,
+          plug: this.plug,
+        })
+        .then((res) => {
+          if (res.body == "OK") {
+            console.log("here");
+            this.$http
+              .post("/api/recordPict_success", {
+                pictUrl: this.pic,
+                YourAddr: this.$store.state.address,
+              })
+              .then((res) => {
+                this.showAfterContract = true;
+                this.hash2 = res.body;
+              });
+          }
+          
+        });
     },
     setrule() {
       this.$http
@@ -401,35 +429,46 @@ export default {
           gbfriendcoin: this.b_money,
         })
         .then((res) => {
-          this.hash=res.body
-          this.showAfterContract2= true;
+          this.hash = res.body;
+          this.showAfterContract2 = true;
+        });
+    },
+    recordPict_success() {
+      this.$$http
+        .post("/api/recordPict_success", {
+          pictUrl: this.pic,
+          YourAddr: this.$store.state.address,
+        })
+        .then((res) => {
+          this.hash2 = res.body;
+          this.showAfterContract = true;
         });
     },
   },
   computed: {
     isDisabled1: function () {
-      if (this.selected1 != '') {
+      if (this.selected1 != "") {
         return false;
       } else {
         return true;
       }
     },
     isDisabled2: function () {
-      if (this.selected2 != '') {
+      if (this.selected2 != "") {
         return false;
       } else {
         return true;
       }
     },
     isDisabled3: function () {
-      if (this.selected3 != '') {
+      if (this.selected3 != "") {
         return false;
       } else {
         return true;
       }
     },
     isDisabled4: function () {
-      if (this.selected4 != '') {
+      if (this.selected4 != "") {
         return false;
       } else {
         return true;
@@ -449,7 +488,6 @@ export default {
   font-size: 10px;
   overflow-x: hidden;
   font-family: Noto Sans CJK TC;
-
   #navigation {
     width: 100vw;
     min-height: 7.5vh;
@@ -464,7 +502,6 @@ export default {
     max-width: 100%;
     max-height: 92.5vh;
     height: 92.5vh;
-
     .textBox {
       position: absolute;
       width: 60vw;
@@ -486,7 +523,6 @@ export default {
       }
       .show {
         height: 55vh;
-
         .rent-contract {
           position: relative;
           width: 100%;
@@ -512,7 +548,6 @@ export default {
               margin-left: 2px;
             }
           }
-
           .IndentInputLine {
             width: 100%;
             height: 45px;
@@ -527,6 +562,18 @@ export default {
             }
             p {
               margin-left: 40px;
+            }
+          }
+          #input {
+            width: 100%;
+
+            margin-left: 10vw;
+            height: 3.5vh;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 30px;
+            input {
+              width: 300px;
             }
           }
           .inputMoney {
@@ -579,7 +626,7 @@ export default {
             flex-direction: row;
             width: 100%;
             height: 45px;
-            margin-left: 10vw;
+            margin-left: 0vw;
             margin-top: 10px;
             text-align: center;
             font-size: 24px;
@@ -593,7 +640,6 @@ export default {
           width: 100%;
           height: 100%;
           background: #ffffff;
-
           .rbtn {
             position: relative;
             height: 20%;
@@ -645,13 +691,11 @@ export default {
             border-bottom-color: #666666;
             outline: none;
           }
-
           #sendButton {
             position: relative;
-            
-            width: 15%;
-            margin-top:2.5%;
 
+            width: 15%;
+            margin-top: 2.5%;
             font-size: 1.2rem;
             text-align: center;
             background-color: #117a8b;
@@ -662,7 +706,7 @@ export default {
             flex-direction: row;
             width: 100%;
             height: 45px;
-            
+
             margin-top: 10px;
             text-align: center;
             font-size: 24px;

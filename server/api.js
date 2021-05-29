@@ -1143,7 +1143,7 @@ module.exports = {
 					if (err) throw err
 					console.log("register success")
 				})
-				res.send(addr);
+				res.send({addr:addr,flag:1});
 				connection.release();
 			})
 		});
@@ -1188,7 +1188,6 @@ module.exports = {
 		var township = req.body.township;
 		var roomtype = req.body.roomtype;
 		var cost = req.body.cost;
-
 		pool.getConnection((err, connection) => {
 
 			if (err) throw err;
@@ -1199,7 +1198,6 @@ module.exports = {
 				if (result.length != 0) {
 					res.send(result)
 				}
-				connection.release()
 			});
 		})
 	},
@@ -1241,6 +1239,7 @@ module.exports = {
 					res.send('no')
 				}
 				else {
+					
 					houseID = result[0].rentID;
 
 					connection.query(sql2, [houseID], function (err, result) {
@@ -1262,7 +1261,7 @@ module.exports = {
 		var eletricMoney= (req.body.eletricMoney / 1000.0).toString();
 		
 		var address_from = req.body.address;
-		var address_to = '0xd5f881f474b8648fa935719b1de77c488a1d0541'
+		var address_to = '0x679788336d8a4fc401e1b71e8c93fc524e408357'
 		var password = 'password';
 
 		var instruction;
@@ -1312,7 +1311,6 @@ module.exports = {
 		pool.getConnection((err, connection) => {
 			if (err) throw err;
 			var sql = "select * from HOUSE where id=?"
-
 			connection.query(sql, [houseID], function (err, result) {
 				if (err) throw err;
 				if (result.length != 0) {
@@ -1363,8 +1361,11 @@ module.exports = {
 					if (err) throw err;
 				});
 			}
+			res.send("OK")
 			connection.release()
 		})
+
+
 	},
 	sendPersonality(req, res, next) {
 
@@ -1457,6 +1458,36 @@ module.exports = {
 			}
 		});
 
+	},
+	recordPict_success(req, res, next) {
+
+
+		var pictUrl = req.body.pictUrl;
+		var yourAddr = req.body.YourAddr;
+		var unlockaddress = yourAddr;
+		console.log(pictUrl)
+		console.log(yourAddr)
+		console.log(unlockaddress)
+		///用你的密碼
+		var unlockpassword = 'password'
+		web3.eth.personal.unlockAccount(unlockaddress, unlockpassword, 9999, function () {
+			console.log('unlock accounts ok')
+		});
+
+		LifeContract.methods.recordPict(yourAddr,pictUrl).send({ from: yourAddr }, function (error, transactionHash) {
+			if (!error) {
+				console.log('need mined')
+				console.log('transactionHash:', transactionHash)
+				res.send(transactionHash);
+				
+			} else {
+				console.log('-------------error-----------')
+				console.log(error)
+				console.log('-------------error-----------')
+			}
+		});
+
 	}
+	
 
 }

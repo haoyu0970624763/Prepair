@@ -45,9 +45,7 @@
                 <a class="dropdown-item" href="" @click="writeHabit"
                   >查看個人檔案</a
                 >
-                <a class="dropdown-item" href="" @click="profile"
-                  >查看合約</a
-                >
+                <a class="dropdown-item" href="" @click="profile">查看合約</a>
                 <a class="dropdown-item" href="" @click="logout">登出</a>
               </div>
             </div>
@@ -192,7 +190,7 @@ export default {
   data() {
     return {
       user: this.$store.state.userName,
-      houseID: this.$store.state.houseID,
+      houseID: '1',
       personality: "",
       region: "南部",
       city: "台南市",
@@ -338,6 +336,7 @@ export default {
         })
         .then((res) => {
           this.$store.commit("personality", this.personality);
+          
         });
     }
     this.$http
@@ -349,6 +348,7 @@ export default {
       })
       .then((res) => {
         this.houses = res.body;
+        this.$store.commit("houseID", this.houseID);
       });
   },
   methods: {
@@ -383,6 +383,18 @@ export default {
     },
     GoToContract() {
       this.$router.push("/Contract");
+    },
+    loadHouse() {
+      this.$http
+        .post("/api/loadHouse", {
+          city: this.city,
+          township: this.township,
+          roomtype: this.roomtype,
+          cost: this.cost,
+        })
+        .then((res) => {
+          this.houses = res.body;
+        });
     },
     searchRoommate() {
       this.$http

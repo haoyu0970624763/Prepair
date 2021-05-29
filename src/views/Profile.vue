@@ -59,7 +59,7 @@
           <p>錢包餘額</p>
           <p>:</p>
           <p>{{ this.balance }}</p>
-          <p> eth </p>
+          <p>eth</p>
           <p>, 1 eth = 1000台幣</p>
         </div>
 
@@ -116,19 +116,23 @@ export default {
     return {
       user: this.$store.state.userName,
       address: this.$store.state.address,
-      houseOwner: "k",
+      houseOwner: "",
       houseID: "",
       balance: "",
       rent: "",
       houseInfo: "",
       MoneyInfo: "",
-      eletricMoney: "1570",
+      eletricMoney: this.$store.state.eletricMoney,
+
       record1: "",
       record2: "",
       moneyType: "",
     };
   },
   async beforeMount() {
+    if (this.record2 == "無交易紀錄") {
+    }
+
     this.$http
       .post("/api/GetBalance", {
         address: this.address,
@@ -162,8 +166,11 @@ export default {
             }
             if (this.MoneyInfo[0].ele_moneyHash == "") {
               this.record2 = "無交易紀錄";
+              this.eletricMoney += 1.25;
+              this.$store.commit("eletricMoney", this.eletricMoney);
             } else {
               this.record2 = this.MoneyInfo[0].ele_moneyHash;
+              
             }
           });
       });
@@ -196,15 +203,13 @@ export default {
       this.give();
     },
     give() {
-      this.$http
-        .post("/api/GiveMoney", {
-          id: this.user,
-          moneyType: this.moneyType,
-          money: this.MoneyInfo[0].money,
-          eletricMoney: this.eletricMoney,
-          address: this.address,
-        })
-        .then((res) => {});
+      this.$http.post("/api/GiveMoney", {
+        id: this.user,
+        moneyType: this.moneyType,
+        money: this.MoneyInfo[0].money,
+        eletricMoney: this.eletricMoney,
+        address: this.address,
+      });
     },
   },
 };
@@ -285,7 +290,7 @@ export default {
         height: 50px;
         width: 100px;
       }
-      .right{
+      .right {
         position: relative;
         left: 50px;
         top: 25px;

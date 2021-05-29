@@ -35,7 +35,8 @@ export default new Vuex.Store({
     recommend5: '',
     houseID: '1',
     rentNumber: '',
-    detailedCost:''
+    detailedCost:'',
+    eletricMoney:0,
   },
 
   mutations: {
@@ -103,7 +104,9 @@ export default new Vuex.Store({
     HouseAddress(state, HouseAddress) {
       state.HouseAddress = HouseAddress;
     },
-
+    houseID(state, houseID) {
+      state.houseID = houseID;
+    },
     recommend1(state, variable) {
       state.recommend1 = variable;
     },
@@ -124,6 +127,9 @@ export default new Vuex.Store({
     },
     detailedCost(state, detailedCost) {
       state.detailedCost = detailedCost;
+    },
+    eletricMoney(state, eletricMoney) {
+      state.eletricMoney = eletricMoney;
     },
     // 清除用户信息
     clearUserInfo(state) {

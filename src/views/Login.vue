@@ -157,11 +157,15 @@ export default {
           password: this.formRegister.userPassword,
         })
         .then((res) => {
-          this.address = res.body;
+          this.address = res.body.addr;
+          
           this.$store.commit("addr", this.address);
           this.$store.commit("name", this.formRegister.userName);
           this.$store.commit("password", this.formRegister.userPassword);
-          window.location.href = "http://127.0.0.1:5500/index.html";
+
+          if(this.$store.state.address!='' && this.$store.state.userName!='' && this.$store.state.Password!=''){
+            window.location.href = "http://127.0.0.1:5500/index.html";
+          }
         });
     },
     // 清空输入框

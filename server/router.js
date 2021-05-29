@@ -46,5 +46,11 @@ router.post('/setCoinRule_success', (req, res, next) => {
     api.setCoinRule_success(req, res, next);
 });
 
+router.post('/recordPict_success', (req, res, next) => {
+    api.recordPict_success(req, res, next);
+});
+
+
+
 
 module.exports = router;

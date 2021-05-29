@@ -43,9 +43,7 @@
                 <a class="dropdown-item" href="" @click="writeHabit"
                   >查看個人檔案</a
                 >
-                <a class="dropdown-item" href="" @click="profile"
-                  >查看合約</a
-                >
+                <a class="dropdown-item" href="" @click="profile">查看合約</a>
                 <a class="dropdown-item" href="" @click="logout">登出</a>
               </div>
             </div>
@@ -57,6 +55,7 @@
     <div class="background-container">
       <div class="title">發生什麼事了呢?</div>
       <div class="subtitle">寫下您的心聲，讓我們為您服務</div>
+
       <div class="question-container">
         <select
           class="custom-select ch1 choose"
@@ -77,7 +76,7 @@
             {{ rules.rule }}
           </option>
         </select>
-
+        <input class="tbx" v-model="pictUrl" placeholder="請輸入圖片證據網址" />
         <button
           id="sendButton"
           type="button"
@@ -87,7 +86,10 @@
           我要檢舉
         </button>
       </div>
-      <div class="Audit" v-if="this.show==true">已提交申請，等待系統審核</div>
+      <div class="Audit" v-if="this.show == true">
+        <p>已提交申請，將此紀錄上傳至區塊鏈上，回傳 hash=</p>
+        {{hash2}}
+      </div>
     </div>
   </div>
 </template>
@@ -99,6 +101,8 @@ export default {
     return {
       rperson: "房東",
       rule: "押金不還",
+      pic:'',
+      hash2:'',
       show: false,
 
       Contracts: [
@@ -134,7 +138,16 @@ export default {
       this.$router.push("/Contract");
     },
     Report() {
-      this.show = true;
+      this.$http
+        .post("/api/recordPict_success", {
+          pictUrl: this.pic,
+          YourAddr: this.$store.state.address,
+        })
+        .then((res) => {
+          this.hash2 = res.body;
+          this.show = true;
+        });
+      
     },
   },
 };
@@ -187,8 +200,8 @@ export default {
       position: relative;
       top: 80px;
       left: 20%;
-      padding-left: 5%;
-      padding-right: 5%;
+      padding-left: 2%;
+      padding-right: 2%;
       width: 60vw;
       height: 30vh;
       display: flex;
@@ -199,21 +212,36 @@ export default {
         top: 60px;
         height: 30%;
 
-        font-size: 24px;
-        margin-right: 5%;
+        font-size: 20px;
+        margin-right: 2%;
       }
       .ch1 {
-        width: 20%;
+        width: 10%;
       }
       .ch2 {
-        width: 40%;
+        width: 30%;
+      }
+      .tbx {
+        top: 60px;
+        position: relative;
+        height: 30%;
+        width: 35%;
+        border-radius: 6px;
+        border: solid 2px #ffffff;
+        font-size: 20px;
+        margin-right: 2%;
+      }
+      input:focus {
+        outline: none !important;
+        border: 2px solid #117a8b;
+        //  border-color: #117a8b;
       }
       #sendButton {
         position: relative;
         top: 60px;
 
-        font-size: 1.5rem;
-        width: 30%;
+        font-size: 20px;
+        width: 25%;
         height: 30%;
         background-color: #117a8b;
         overflow-x: hidden;
@@ -222,8 +250,9 @@ export default {
   }
   .Audit {
     position: relative;
-    left: 40%;
-    width: 300px;
+    left: 22%;
+    bottom: 20px;
+    width: 100%;
     height: 50px;
     font-weight: bold;
     font-size: 24px;

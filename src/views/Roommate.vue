@@ -252,7 +252,7 @@ export default {
         left: 0px;
         .person {
           .face {
-            background-image: url("../assets/first.png");
+            background-image: url("../assets/187504049_147958440694003_7503697843092817330_n.png");
           }
         }
       }
@@ -261,7 +261,7 @@ export default {
         left: 100px;
         .person {
           .face {
-            background-image: url("../assets/first.png");
+            background-image: url("../assets/187504049_147958440694003_7503697843092817330_n.png");
           }
         }
       }
@@ -270,7 +270,7 @@ export default {
         left: 200px;
         .person {
           .face {
-            background-image: url("../assets/first.png");
+            background-image: url("../assets/187504049_147958440694003_7503697843092817330_n.png");
           }
         }
       }
@@ -279,7 +279,7 @@ export default {
         left: 300px;
         .person {
           .face {
-            background-image: url("../assets/first.png");
+            background-image: url("../assets/187504049_147958440694003_7503697843092817330_n.png");
           }
         }
       }
